@@ -4,9 +4,24 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>AEM</title>
 </head>
+<style type="text/css">
+#footer
+{
+background-color: #ccc;
+color:white;
+position:absolute;
+top:95%;
+left:20%;
+width:80%;
+height: 5%;
+text-align: right;
+}
+</style>
 <body>
-<h4>this is footer</h4>
+<footer id="footer">
+<a href="http://aartek.co.in/"style="padding-top:.2%;">&copyAartek software solutions 2016</a>
+</footer>
 </body>
 </html>
