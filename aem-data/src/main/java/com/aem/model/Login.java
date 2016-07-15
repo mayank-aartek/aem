@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Entity
 public class Login implements Serializable
 {
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ID")
