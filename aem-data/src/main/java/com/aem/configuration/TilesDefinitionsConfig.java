@@ -16,10 +16,11 @@ public class TilesDefinitionsConfig implements DefinitionsFactory{
 		return tilesDefinitions.get(name);
 	}
 
-	private static void addDefaultLayoutDef(String name, String body, String header, String footer) {
+	private static void addDefaultLayoutDef(String name, String leftheader, String body, String header, String footer) {
 
 		Map<String, Attribute> attributes = new HashMap<String, Attribute>();
 		attributes.put("header", new Attribute(header));
+		attributes.put("leftheader", new Attribute(leftheader));
 		attributes.put("body", new Attribute("/WEB-INF/jsp/" + "" + body + "" + ".jsp"));
 		attributes.put("footer", new Attribute(footer));
 		tilesDefinitions.put(name, new Definition(name, new Attribute("/WEB-INF/layout/defaultLayout.jsp"), attributes));
@@ -28,7 +29,7 @@ public class TilesDefinitionsConfig implements DefinitionsFactory{
 	public static void addDefinitions() {
 		// TODO Auto-generated method stub
 		
-		addDefaultLayoutDef("home", "home", "/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
+		addDefaultLayoutDef("home", "home","/WEB-INF/layout/leftheader.jsp" ,"/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 
 
 		
