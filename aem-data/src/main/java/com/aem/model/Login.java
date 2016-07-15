@@ -12,11 +12,11 @@ public class Login implements Serializable
 	@Column(name="ID")
 	Integer Id;
 	@Column(name="EMAIL")
-String email;
+	String email;
 	@Column(name="PASSWORD")
 	String Password;
 	@Column(name="ENCRYPTED")
-String	encrypted;
+	String	encrypted;
 	@Column(name="CREATION_TIME")
 	String creationTime;
 	@Column(name="UPDATION_TIME")
