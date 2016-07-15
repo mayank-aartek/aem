@@ -1,8 +1,10 @@
 package com.aem.model;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 @Entity
-public class Login
+public class Login implements Serializable
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
