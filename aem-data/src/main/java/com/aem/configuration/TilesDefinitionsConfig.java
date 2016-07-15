@@ -29,7 +29,7 @@ public class TilesDefinitionsConfig implements DefinitionsFactory{
 	public static void addDefinitions() {
 		// TODO Auto-generated method stub
 		
-		addDefaultLayoutDef("home", "home","/WEB-INF/layout/leftheader.jsp" ,"/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
+		addDefaultLayoutDef("login", "login","/WEB-INF/layout/leftheader.jsp" ,"/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 
 
 		
