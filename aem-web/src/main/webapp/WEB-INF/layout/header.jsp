@@ -4,11 +4,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>AEM</title>
+<style type="text/css">
+
+.headerBox
+{
+background-color:#001a4d;
+max-width:80%;
+height: 97px;
+position: absolute;
+top:0;
+right:0%;
+left:20%;
+float: right;
+
+
+}
+
+</style>
+<div class="headerBox" style="text-align: center;font-size:200%;">
+<label style="position:relative;top:20%;color:#FFFAFA;opacity:0.5;text-decoration: underline;">Aartek Employee Management</label>
+</div>
 </head>
+
 <body>
-
-<h4>this is header</h4>
-
 </body>
 </html>
