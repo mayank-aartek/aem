@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.aem.model.UserLogin;
+import com.aem.model.Login;
 
 
 
@@ -19,7 +19,7 @@ public class AdminLoginController {
 	@RequestMapping(value = "/adminLogin", method = RequestMethod.GET)
 	public String showLogin(Map<String, Object> map){
 		
-		map.put("UserLogin", new UserLogin());
+		map.put("UserLogin", new Login());
 		System.out.println("Admin controller show method");		
 		return "adminLogin";
 		}
