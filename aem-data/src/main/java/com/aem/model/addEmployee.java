@@ -1,5 +1,7 @@
 package com.aem.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,117 +12,92 @@ import javax.persistence.Table;
 @Entity
 
 @Table(name="addEmployee")
-public class addEmployee {
+public class addEmployee implements Serializable {
 
-	@Id
-	
-	@GeneratedValue(strategy = GenerationType.AUTO)
-		
-	@Column(name="ID")
-		
+	@Id	
+	@GeneratedValue(strategy = GenerationType.AUTO)		
+	@Column(name="ID")		
 	private Integer id;
 		 
 		
-	@Column(name="FIRST_NAME")
-		
+	@Column(name="FIRST_NAME")		
 	private String firstName;
 		
 		
-	@Column(name="MIDDLE_NAME")
-		
+	@Column(name="MIDDLE_NAME")		
 	private String middleName;
 		
 		
-	@Column(name="LAST_NAME")
-		
+	@Column(name="LAST_NAME")		
 	private String lastName;
 		
 		
-	@Column(name="CONTACT_NUMBER")
-		
+	@Column(name="CONTACT_NUMBER")		
 	private String contactNo;
 		
 		
 	@Column(name="REFRENCE_NUMBER")
-
 	private String refrenceNo;
 		
 		
-	@Column(name="GENDER")
-		
+	@Column(name="GENDER")		
 	private String gender;
 		
 		
-	@Column(name="DATE_OF_BIRTH")
-		
+	@Column(name="DATE_OF_BIRTH")		
 	private String DOB;
 		
 		
-	@Column(name="BLOOD_GROUP")
-		
+	@Column(name="BLOOD_GROUP")		
 	private String bloodGroup;
 		
 		
-	@Column(name="MARITAL_STATUS")
-		
+	@Column(name="MARITAL_STATUS")		
 	private String maritalStatus;
 		
 		
-	@Column(name="DESIGNATION")
-		
+	@Column(name="DESIGNATION")		
 	private String designation;
 		
 		
-	@Column(name="EMAIL")
-		
+	@Column(name="EMAIL")		
 	private String email;
 		
 		
-	@Column(name="PASSWORD")
-		
+	@Column(name="PASSWORD")		
 	private String password;
 		
 		
-	@Column(name="ADDRESS")
-		
+	@Column(name="ADDRESS")		
 	private String address;
 		
 		
-	@Column(name="CITY")
-		
+	@Column(name="CITY")		
 	private String city;
 		
 		
-	@Column(name="STATE")
-		
+	@Column(name="STATE")		
 	private String state;
 		
 		
-	@Column(name="ZIP_CODE")
-		
+	@Column(name="ZIP_CODE")		
 	private String zipCode;
 		
 		
-	@Column(name="NATIONALITY")
-		
+	@Column(name="NATIONALITY")		
 	private String nationality;
 		
 		
-	@Column(name="PREVIOUS_COMPANY")
-		
+	@Column(name="PREVIOUS_COMPANY")		
 	private String previousCompany;
 		
 		
-	@Column(name="PREVIOUS_PACKAGE")
-		
+	@Column(name="PREVIOUS_PACKAGE")		
 	private String previousPackage;
 		
 		
-	@Column(name="CURRENT_PACKAGE")
-		
+	@Column(name="CURRENT_PACKAGE")		
 	private String currentPackage;
-		
-		
 		
 		
 	public addEmployee(String firstName, String middleName,String lastName,String contactNo,String refrenceNo, String gender,String DOB,String bloodGroup,String maritalStatus,String designation,String email, String password,String address,String city,String state,String zipCode,String nationality,String previousCompany,String previousPackage,String currentPackage)
