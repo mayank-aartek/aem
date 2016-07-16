@@ -36,6 +36,7 @@ $('a').click(function(event){
 
 
 </head>
+
 <style type="text/css">
 body{
   font-family: 'Open Sans', sans-serif;
@@ -128,11 +129,10 @@ h1{
 background:#3594D2; 
 }
 </style>
-<body>
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
 
-<form method="post" action="userlogin">
+<form method="get" action="userlogin">
 <div class="box">
 <h1>Employee Login</h1>
 

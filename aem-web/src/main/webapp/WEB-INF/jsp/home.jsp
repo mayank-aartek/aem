@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h2></h2>
+<a href="http://localhost:8080/aem-web-0.0.1-SNAPSHOT/login">HOME page</a>
 </body>
 </html>

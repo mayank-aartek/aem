@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>index</title>
 </head>
 <body>
-<a href="login">HOME</a>
+<a href="home">HOME</a>
 </body>
 </html>
