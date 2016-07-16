@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesView;
@@ -42,7 +43,10 @@ public class AppConfig extends WebMvcConfigurerAdapter{
 		return tilesConfigurer;
 	}
 	
-	
+	@Override
+	   public void addViewControllers(ViewControllerRegistry registry) {
+	     registry.addViewController("/").setViewName("login");
+	   }
 	
 	
 }
