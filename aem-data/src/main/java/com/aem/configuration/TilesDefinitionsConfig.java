@@ -30,6 +30,7 @@ public class TilesDefinitionsConfig implements DefinitionsFactory{
 		// TODO Auto-generated method stub
 		
 		addDefaultLayoutDef("login", "login","/WEB-INF/layout/leftheader.jsp" ,"/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
+		addDefaultLayoutDef("employeemanagement", "employeemanagement","/WEB-INF/layout/leftheader.jsp" ,"/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 
 
 		
