@@ -5,6 +5,8 @@
 <title><tiles:insertAttribute name="title" ignore="true"></tiles:insertAttribute></title>
 </head>
 <body>
+<tiles:insertAttribute name="leftheader" />
+<%-- <tiles:insertAttribute name="leftheader" /> --%>
 	<tiles:insertAttribute name="header" />
 	<tiles:insertAttribute name="body" />
 	<tiles:insertAttribute name="footer" />
