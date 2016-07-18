@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.aem.model.Login;
+import com.aem.service.LoginService;
 
 @Controller
 public class LoginController {
@@ -30,15 +31,14 @@ public class LoginController {
 		return "login";		
 	}	
 	
-	
-	/*@RequestMapping(value="/userlogin", method= RequestMethod.POST)
+	@RequestMapping(value="/userlogin", method= RequestMethod.POST)
 	public String loginRequest(@ModelAttribute("UserLogin") Login login){
 		
-		boolean status=loginService.displayLoginService();
+	/*	boolean status=loginService.displayLoginService();*/
 		
 		return null;	
 		
-	}*/
+	}
 	
 
 }
