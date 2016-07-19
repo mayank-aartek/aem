@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib uri="http://displaytag.sf.net" prefix="display"%>
+
 <html >
   <head>
     <meta charset="UTF-8">
@@ -40,7 +40,10 @@
 }
 
 html, body {
-  height: 100%;
+ 
+  margin-left:100px;
+  margin-top:50px; 
+   
 }
 
 body {
@@ -62,8 +65,8 @@ p {
 
 main {
   min-width: 320px;
-  max-width: 1800px;
-  padding: 50px;
+  max-width: 900px;
+  padding: 100px;
   margin: 0 auto;
   background: #fff;
 }
@@ -380,12 +383,12 @@ th
     
   <section id="content1">
 <body>
-<form:form >
+<form >
 <div id="tab">
 <table class="responstable" id="t2">
-<tr style="background:rgb(234,243,243)"> Show<form:select><option>select<option></form:select> &nbsp;enteries &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
- Search <form:input type="text" style="width:68px"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Select Month <form:input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#">View Timesheet</a> &nbsp;&nbsp;     <a href="#">Add Current/Past Week's Timesheet</a></tr>
+<tr style="background:rgb(234,243,243)"> Show<select><option>select<option></select> &nbsp;enteries &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+ Search <input type="text" style="width:68px"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Select Month <input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#">View Timesheet</a> &nbsp;&nbsp;     <a href="#">Add Current/Past Week's Timesheet</a></tr>
 
   <tr>
     <th>Project</th>
@@ -416,7 +419,7 @@ Select Month <form:input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#"
 </table>
 </div>
 
-</form:form >
+</form >
 
 
 </body>
@@ -444,11 +447,12 @@ Select Month <form:input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#"
   </section>
     
   <section id="content2">
-<form:form >
+<body>
+<form >
 <div id="tab">
 <table class="responstable">
-<tr colspan="5">Start Date<form:input type="text" class="datepicker" /> End Date
-<form:input type="text" class="datepicker" />&nbsp;&nbsp;<a href="#">Add new</a></tr>
+<tr colspan="5">Start Date<input type="text" class="datepicker" /> End Date
+<input type="text" class="datepicker" />&nbsp;&nbsp;<a href="#">Add new</a></tr>
  <div style="font-size:10px;">
   <tr>
     <th rowspan="3">Status</th>
@@ -478,15 +482,15 @@ Select Month <form:input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#"
 </div>
   <tr>
    <td></td>
-   <td><form:select><option>select<option></form:select></td>
-   <td><form:select><option>select<option></form:select></td>
-   <td><form:input type="text" /></td>
-   <td><form:input type="text" style="width:68px"/></td>
-   <td><form:input type="text" style="width:68px"/></td>
-   <td><form:input type="text" style="width:68px"/></td>
-   <td><form:input type="text" style="width:68px"/></td>
-   <td><form:input type="text" style="width:68px"/></td> 
-   <td><form:input type="text" style="width:68px"/></td>
+   <td><select><option>select<option></select></td>
+   <td><select><option>select<option></select></td>
+   <td><input type="text" /></td>
+   <td><input type="text" style="width:68px"/></td>
+   <td><input type="text" style="width:68px"/></td>
+   <td><input type="text" style="width:68px"/></td>
+   <td><input type="text" style="width:68px"/></td>
+   <td><input type="text" style="width:68px"/></td> 
+   <td><input type="text" style="width:68px"/></td>
   </tr>
  
   
@@ -494,30 +498,30 @@ Select Month <form:input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#"
  
   <tr style="background:rgb(234,243,243)"> 
    <td colspan="4">Hours</td> 
-   <td><form:input type="text" style="width:68px"/></td>
-   <td><form:input type="text" style="width:68px"/></td>
-   <td><form:input type="text" style="width:68px"/></td>
-   <td><form:input type="text" style="width:68px"/></td>
-   <td><form:input type="text" style="width:68px"/></td> 
-   <td><form:input type="text" style="width:68px"/></td>
+   <td><input type="text" style="width:68px"/></td>
+   <td><input type="text" style="width:68px"/></td>
+   <td><input type="text" style="width:68px"/></td>
+   <td><input type="text" style="width:68px"/></td>
+   <td><input type="text" style="width:68px"/></td> 
+   <td><input type="text" style="width:68px"/></td>
   </tr>
   
   <tr>
    <td colspan="4">Total Weekly hours</td> 
-   <td style="text-align:right" colspan="6">  <form:input type="text" style="width:68px" /></td>
+   <td style="text-align:right" colspan="6">  <input type="text" style="width:68px" /></td>
   </tr>
  
   
 </table>
 </div>
 <p align="center"><input type="button" value="Save"/>
-<form:input type="button" value="Send for Approval"/>
+<input type="button" value="Send for Approval"/>
 </p>
-</form:form >
+</form >
 
   
   
-   
+  </body>  
   </section>
     
  
@@ -528,5 +532,5 @@ Select Month <form:input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#"
     
     
     
-  </body>
+ 
 </html>

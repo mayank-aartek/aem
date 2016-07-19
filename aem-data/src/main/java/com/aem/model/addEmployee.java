@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 
 @Table(name="addEmployee")
-public class addEmployee implements Serializable {
+public class AddEmployee implements Serializable {
 
 	@Id	
 	@GeneratedValue(strategy = GenerationType.AUTO)		
@@ -21,12 +21,7 @@ public class addEmployee implements Serializable {
 		 
 		
 	@Column(name="FIRST_NAME")		
-	private String firstName;
-		
-		
-	@Column(name="MIDDLE_NAME")		
-	private String middleName;
-		
+	private String firstName;	
 		
 	@Column(name="LAST_NAME")		
 	private String lastName;
@@ -78,8 +73,24 @@ public class addEmployee implements Serializable {
 		
 	@Column(name="STATE")		
 	private String state;
+	
+	@Column(name="COUNTRY")		
+	private String country;
+	
 		
-		
+	public String getCountry() {
+		return country;
+	}
+
+
+
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+
+
 	@Column(name="ZIP_CODE")		
 	private String zipCode;
 		
@@ -89,24 +100,17 @@ public class addEmployee implements Serializable {
 		
 		
 	@Column(name="PREVIOUS_COMPANY")		
-	private String previousCompany;
-		
-		
-	@Column(name="PREVIOUS_PACKAGE")		
-	private String previousPackage;
-		
+	private String previousCompany;	
 		
 	@Column(name="CURRENT_PACKAGE")		
 	private String currentPackage;
 		
 		
-	public addEmployee(String firstName, String middleName,String lastName,String contactNo,String refrenceNo, String gender,String DOB,String bloodGroup,String maritalStatus,String designation,String email, String password,String address,String city,String state,String zipCode,String nationality,String previousCompany,String previousPackage,String currentPackage)
+	public AddEmployee(String firstName, String middleName,String lastName,String contactNo,String refrenceNo, String gender,String DOB,String bloodGroup,String maritalStatus,String designation,String email, String password,String address,String city,String state,String zipCode,String nationality,String previousCompany,String previousPackage,String currentPackage)
 	{
 			
 			
 	this.firstName = firstName;
-			
-	this.middleName = middleName;
 			
 	this.lastName = lastName;
 			
@@ -140,8 +144,6 @@ public class addEmployee implements Serializable {
 			
 	this.previousCompany = previousCompany;
 			
-	this.previousPackage = previousPackage;
-			
 	this.currentPackage = currentPackage;
 			
 		
@@ -174,20 +176,7 @@ public class addEmployee implements Serializable {
 			this.firstName = firstName;
 		}
 
-
-
-		public String getMiddleName() {
-			return middleName;
-		}
-
-
-
-		public void setMiddleName(String middleName) {
-			this.middleName = middleName;
-		}
-
-
-
+		
 		public String getLastName() {
 			return lastName;
 		}
@@ -376,18 +365,6 @@ public class addEmployee implements Serializable {
 
 		public void setPreviousCompany(String previousCompany) {
 			this.previousCompany = previousCompany;
-		}
-
-
-
-		public String getPreviousPackage() {
-			return previousPackage;
-		}
-
-
-
-		public void setPreviousPackage(String previousPackage) {
-			this.previousPackage = previousPackage;
 		}
 
 
