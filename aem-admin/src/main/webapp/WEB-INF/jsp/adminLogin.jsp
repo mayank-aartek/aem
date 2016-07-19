@@ -283,10 +283,10 @@ form:after {
 		<f:form method="POST" action="saveAdminLogin.do" modelAttribute="UserLogin">
 			<h1>Admin Login Form</h1>
 			<div>
-				<f:input path="email" type="text" placeholder="Username" required="" id="email" />
+				<f:input path="emailId" type="text" placeholder="Username" required="" id="emailId" />
 			</div>
 			<div>
-				<input path="Password" type="password" placeholder="Password" required="" id="Password" />
+				<input path="password" type="password" placeholder="Password" required="" id="password" />
 			</div>
 			<div>
 				<input type="submit" value="Log in" />
