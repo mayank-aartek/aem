@@ -9,39 +9,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.aem.model.Login;
-//import com.aem.service.LoginService;
+import com.aem.service.LoginService;
 
 @Controller
 public class LoginController {
-	
-	/*@Autowired
-	private LoginService loginService;*/
 
-	
+	@Autowired
+	private LoginService loginService;
+
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String showLogin(Map<String, Object> map){
-	/*
-	 
-	 */
-	
-		return "home";		
+	public String showLogin(Map<String, Object> map) {
+
+		/*
+		 * ArrayList<String> arrayList=new ArrayList<String>();
+		 * arrayList.add("java"); arrayList.add("c"); arrayList.add("ruby");
+		 * arrayList.add("php"); arrayList.add("java");
+		 */
+
+		return "home";
 	}
-	
-	/*showing login page after click on home hyperlink*/
+
+	/* showing login page after click on home hyperlink */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String displayLogin(Map<String, Object> map){
-		System.out.println("login controller");		
-		return "login";		
-	}	
-	
-	@RequestMapping(value="/userlogin", method= RequestMethod.POST)
-	public String loginRequest(@ModelAttribute("UserLogin") Login login){
-		
-	/*	boolean status=loginService.displayLoginService();*/
-		
-		return null;	
-		
+	public String displayLogin(Map<String, Object> map) {
+		System.out.println("login controller");
+		return "login";
 	}
-	
+
+	@RequestMapping(value = "/userlogin", method = RequestMethod.POST)
+	public String loginRequest(@ModelAttribute("UserLogin") Login login) {
+
+		/*loginService.userLoginService(login);*/
+
+		return null;
+
+	}
 
 }

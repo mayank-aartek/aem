@@ -286,7 +286,7 @@ form:after {
 				<f:input path="email" type="text" placeholder="Username" required="" id="email" />
 			</div>
 			<div>
-				<input path="password" type="password" placeholder="Password" required="" id="password" />
+				<input path="Password" type="password" placeholder="Password" required="" id="Password" />
 			</div>
 			<div>
 				<input type="submit" value="Log in" />
