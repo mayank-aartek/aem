@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 
 @Table(name="addEmployee")
-public class addEmployee implements Serializable {
+public class AddEmployee implements Serializable {
 
 	@Id	
 	@GeneratedValue(strategy = GenerationType.AUTO)		
@@ -100,7 +100,7 @@ public class addEmployee implements Serializable {
 	private String currentPackage;
 		
 		
-	public addEmployee(String firstName, String middleName,String lastName,String contactNo,String refrenceNo, String gender,String DOB,String bloodGroup,String maritalStatus,String designation,String email, String password,String address,String city,String state,String zipCode,String nationality,String previousCompany,String previousPackage,String currentPackage)
+	public AddEmployee(String firstName, String middleName,String lastName,String contactNo,String refrenceNo, String gender,String DOB,String bloodGroup,String maritalStatus,String designation,String email, String password,String address,String city,String state,String zipCode,String nationality,String previousCompany,String previousPackage,String currentPackage)
 	{
 			
 			
