@@ -108,10 +108,10 @@ border-radius:50%;
 
 <body>
 <div class="mainmenuBox">
-<div id="logo"><img src="/images/logo.png"  alt="logo" style="max-width: 100%;max-height: 100%; background-color:white;"></div>
+<div id="logo"><img src="src/main/webapp/resources/images/logo.png"  alt="logo" style="max-width: 100%;max-height: 100%; background-color:white;"></div>
 
 
-<div class="photoBox"><img src="/images/photo.jpg" id="photo" style="width:45%; height:27%"><label id="name">Priyanka Shukla</label></div>
+<div class="photoBox"><img src="src/main/webapp/resources/images/photo.jpg" id="photo" style="width:45%; height:27%"><label id="name">sr.software Engn.</label></div>
 
 
 
