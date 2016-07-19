@@ -103,25 +103,31 @@ border-radius:50%;
 
 }
 
+.mainmenuBox{
+width: 20%;
+height:100%;
+
+}
+
+#logo{
+background-color:red;
+width:100%;
+height:97px;
+}
 
 </style>
 
 <body>
 <div class="mainmenuBox">
-<div id="logo"><img src="/images/logo.png"  alt="logo" style="max-width: 100%;max-height: 100%; background-color:white;"></div>
+<div id="logo"><img src="ass.png"></div>
 
 
-<div class="photoBox"><img src="/images/photo.jpg" id="photo" style="width:45%; height:27%"><label id="name">Priyanka Shukla</label></div>
-
-
-
-
+<div class="photoBox"><img id="photo" src="photo.jpg" style="width:45%; height:27%"><label id="name">Priyanka Shukla</label></div>
 
 <ul class="mainmenu">
     <li><a href="">Home</a></li>
     <li><a href="">About</a></li>
     <li><a href="">Transaction</a>
-    <li><a href="http://localhost:8080/aem-web-0.0.1-SNAPSHOT/employeemanagement">employeemanagement</a></li>
       <ul class="submenu">
         <li><a href="">Rishabh</a></li>
         <li><a href="">Samarjeet</a></li>
@@ -131,5 +137,7 @@ border-radius:50%;
     <li><a href="">Contact us</a></li>
   </ul>
 </div>
+
+
 </body>
 </html>
