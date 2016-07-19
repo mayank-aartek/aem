@@ -104,10 +104,16 @@
   color: #EF3B3A;
 }
 body {
-
+background:#3498db;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
+}
+
+
+h1{
+  font-size:1.5em;
+  color:#525252;
 }
 </style>
 <script>
@@ -119,7 +125,7 @@ $('.message a').click(function(){
 <body>
 <div class="login-page">
   <div class="form">
-  
+ <h1>Admin Login</h1> 
     <f:form class="login-form" method="POST" action="saveAdminLogin.do" modelAttribute="UserLogin">
       <f:input path="email" type="text" placeholder="Username" required="" id="email" />
 <f:input path="Password" type="password" placeholder="Password" required="" id="Password" />
