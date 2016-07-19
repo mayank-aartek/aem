@@ -7,6 +7,6 @@
 <title>index</title>
 </head>
 <body>
-<a href="home">HOME</a>
+<a href="home">index page</a>
 </body>
 </html>
