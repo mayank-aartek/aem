@@ -21,12 +21,7 @@ public class AddEmployee implements Serializable {
 		 
 		
 	@Column(name="FIRST_NAME")		
-	private String firstName;
-		
-		
-	@Column(name="MIDDLE_NAME")		
-	private String middleName;
-		
+	private String firstName;	
 		
 	@Column(name="LAST_NAME")		
 	private String lastName;
@@ -78,8 +73,24 @@ public class AddEmployee implements Serializable {
 		
 	@Column(name="STATE")		
 	private String state;
+	
+	@Column(name="COUNTRY")		
+	private String country;
+	
 		
-		
+	public String getCountry() {
+		return country;
+	}
+
+
+
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+
+
 	@Column(name="ZIP_CODE")		
 	private String zipCode;
 		
@@ -100,8 +111,6 @@ public class AddEmployee implements Serializable {
 			
 			
 	this.firstName = firstName;
-			
-	this.middleName = middleName;
 			
 	this.lastName = lastName;
 			
@@ -167,20 +176,7 @@ public class AddEmployee implements Serializable {
 			this.firstName = firstName;
 		}
 
-
-
-		public String getMiddleName() {
-			return middleName;
-		}
-
-
-
-		public void setMiddleName(String middleName) {
-			this.middleName = middleName;
-		}
-
-
-
+		
 		public String getLastName() {
 			return lastName;
 		}
