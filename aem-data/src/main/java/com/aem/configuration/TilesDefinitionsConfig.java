@@ -17,7 +17,7 @@ public class TilesDefinitionsConfig implements DefinitionsFactory{
 	}
 
 	private static void addDefaultLayoutDef(String name, String body, String leftheader, String header, String footer) {
-
+		System.out.println("default layout");
 		Map<String, Attribute> attributes = new HashMap<String, Attribute>();
 		attributes.put("header", new Attribute(header));
 		attributes.put("leftheader", new Attribute(leftheader));
@@ -25,11 +25,23 @@ public class TilesDefinitionsConfig implements DefinitionsFactory{
 		attributes.put("footer", new Attribute(footer));
 		tilesDefinitions.put(name, new Definition(name, new Attribute("/WEB-INF/layout/defaultLayout.jsp"), attributes));
 	}
+	
+	
+	private static void addWelcomeLayoutDef(String name, String body, String welcomeHeader, String welcomeFooter) {
+
+		System.out.println("welcome layout");
+		Map<String, Attribute> attributes = new HashMap<String, Attribute>();
+		attributes.put("header", new Attribute(welcomeHeader));
+		attributes.put("body", new Attribute("/WEB-INF/jsp/" + "" + body + "" + ".jsp"));
+		attributes.put("footer", new Attribute(welcomeFooter));
+		tilesDefinitions.put(name, new Definition(name, new Attribute("/WEB-INF/layout/welcomelayout.jsp"), attributes));
+	}
 
 	public static void addDefinitions() {
 		// TODO Auto-generated method stub
-		
-		addDefaultLayoutDef("home", "home","/WEB-INF/layout/leftheader.jsp" ,"/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
+		System.out.println("inside defination");
+		addDefaultLayoutDef("home", "home","" ,"/WEB-INF/layout/welcome-header.jsp", "/WEB-INF/layout/welcome-footer.jsp");
+		//addWelcomeLayoutDef("home", "home","/WEB-INF/layout/welcome-header.jsp", "/WEB-INF/layout/welcome-footer.jsp");
 		
 		addDefaultLayoutDef("login", "login","/WEB-INF/layout/leftheader.jsp" ,"/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 		addDefaultLayoutDef("employeemanagement", "employeemanagement","/WEB-INF/layout/leftheader.jsp" ,"/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
@@ -38,10 +50,7 @@ public class TilesDefinitionsConfig implements DefinitionsFactory{
 	    addDefaultLayoutDef("employeeRegistration", "employeeRegistration", "/WEB-INF/layout/leftheader.jsp","/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 	    addDefaultLayoutDef("welcomePage", "welcomePage", "/WEB-INF/layout/leftheader.jsp","/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 
-		addDefaultLayoutDef("adminLogin", "adminLogin", "/WEB-INF/layout/leftheader.jsp","/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
-		addDefaultLayoutDef("employeeRegistration", "employeeRegistration", "/WEB-INF/layout/leftheader.jsp","/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
-		addDefaultLayoutDef("welcomePage", "welcomePage", "/WEB-INF/layout/leftheader.jsp","/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
-
+		
 		
 	}
 	
