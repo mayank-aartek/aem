@@ -105,7 +105,9 @@ public class AddEmployee implements Serializable {
 	@Column(name="CURRENT_PACKAGE")		
 	private String currentPackage;
 		
+	public AddEmployee(){
 		
+	}
 	public AddEmployee(String firstName, String middleName,String lastName,String contactNo,String refrenceNo, String gender,String DOB,String bloodGroup,String maritalStatus,String designation,String email, String password,String address,String city,String state,String zipCode,String nationality,String previousCompany,String previousPackage,String currentPackage)
 	{
 			
