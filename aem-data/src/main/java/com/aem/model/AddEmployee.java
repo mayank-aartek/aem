@@ -89,12 +89,7 @@ public class AddEmployee implements Serializable {
 		
 		
 	@Column(name="PREVIOUS_COMPANY")		
-	private String previousCompany;
-		
-		
-	@Column(name="PREVIOUS_PACKAGE")		
-	private String previousPackage;
-		
+	private String previousCompany;	
 		
 	@Column(name="CURRENT_PACKAGE")		
 	private String currentPackage;
@@ -139,8 +134,6 @@ public class AddEmployee implements Serializable {
 	this.nationality = nationality;
 			
 	this.previousCompany = previousCompany;
-			
-	this.previousPackage = previousPackage;
 			
 	this.currentPackage = currentPackage;
 			
@@ -376,18 +369,6 @@ public class AddEmployee implements Serializable {
 
 		public void setPreviousCompany(String previousCompany) {
 			this.previousCompany = previousCompany;
-		}
-
-
-
-		public String getPreviousPackage() {
-			return previousPackage;
-		}
-
-
-
-		public void setPreviousPackage(String previousPackage) {
-			this.previousPackage = previousPackage;
 		}
 
 
