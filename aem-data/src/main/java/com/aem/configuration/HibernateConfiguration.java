@@ -36,13 +36,13 @@ public class HibernateConfiguration
 	@Bean
 	public DataSource dataSource()
 	{
-		System.out.println("before datasource");
+		
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(environment.getRequiredProperty("jdbc.driverClassName"));        
         dataSource.setUrl(environment.getRequiredProperty("jdbc.url"));
         dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
         dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
-        System.out.println("after drivercClass");										
+       								
         
         return dataSource;
 
@@ -51,16 +51,16 @@ public class HibernateConfiguration
 	
 	@Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-		System.out.println("entity manager");
+		
 
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource());
         entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistence.class);
-        System.out.println("persitence entity manager");
+        
         entityManagerFactoryBean.setPackagesToScan(environment.getRequiredProperty("entitymanager.packages.to.scan"));
         
         entityManagerFactoryBean.setJpaProperties(hibernateProperties());
-        System.out.println("entity manager com.aem");
+        
 
         return entityManagerFactoryBean;
     }

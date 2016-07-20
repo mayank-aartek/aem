@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -132,19 +133,19 @@ background:#3594D2;
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
 
-<form method="post" action="login">
+<form method="post" action="<c:url value='/userlogin' />">
 <div class="box">
 <h1>Employee Login</h1>
 
 <input type="email" name="email" value="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
   
-<input type="password" name="email" value="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
+<input type="password" name="password" value="password" placeholder="enter your password"  class="email" />
   
-<a href="http://localhost:8080/aem-web-0.0.1-SNAPSHOT/login"><div class="btn"> Sign In</div></a> <!-- End Btn -->
+<!-- <a href="http://localhost:8080/aem-web-0.0.1-SNAPSHOT/login"><div class="btn"> Sign In</div></a> End Btn -->
 
 <a href="#"><div id="btn2">Sign Up</div></a> <!-- End Btn2 -->
 
-<!-- <input type="submit" value="Sign In"> -->
+<input type="submit" value="Sign In">
   
 </div> <!-- End Box -->
   
