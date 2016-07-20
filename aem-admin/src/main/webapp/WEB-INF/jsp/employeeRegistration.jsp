@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
+
 <html>
 <head>
         <title>CSS Registration Form</title>
@@ -8,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="webapp/css/default.css"/>
     </head>
     <style>
-    */*Set's border, padding and margin to 0 for all values*/
+*/*Set's border, padding and margin to 0 for all values*/
 {
     padding: 0;
     margin: 0;
@@ -41,7 +47,7 @@ h1 {
     font-weight:200;
     color: #888888;
     font-size:16pt;
-    background: transparent url(C:/Users/Nice/Desktop/registration/img/h1.png) no-repeat center left;
+    background: transparent url(../img/h1.png) no-repeat center left;
     padding-left:33px;
     margin:7px 5px 8px 8px;
 }
@@ -116,7 +122,7 @@ form.register .infobox{
     width:380px;
     height:98px;
     font-size:9px;
-    background: #FDFEFA url(..C:/Users/Nice/Desktop/registration/img/bg_infobox.gif) repeat-x top left;
+    background: #FDFEFA url(../img/bg_infobox.gif) repeat-x top left;
 }
 form.register legend
 {
@@ -186,7 +192,7 @@ form.register input[type=password]
 }
 .button
 {
-    background: #abda0f url(..C:/Users/Nice/Desktop/registration/img/overlay.png) repeat-x;
+    background: #abda0f url(../img/overlay.png) repeat-x;
     padding: 8px 10px 8px;
     color: #fff;
     text-decoration: none;
@@ -238,20 +244,10 @@ p.agreement label{
     text-align:left;
     margin-top:3px;
 }
-
-
-
-    
-    
     </style>
-    
-    
-    
-    
-    
-    
-    <body>    
-        <form action="" class="register">
+<body>    
+        <f:form method="POST" action="saveEmployee.do"
+		modelAttribute="AddEmployee">
             <h1>Registration</h1>
             <fieldset class="row1">
                 <legend>Account Details
@@ -259,13 +255,13 @@ p.agreement label{
                 <p>
                     <label>Email *
                     </label>
-                    <input type="text"/>
+                    <f:input path="" type="text" id=""/>
                     
                 </p>
                 <p>
                     <label>Password*
                     </label>
-                    <input type="text"/>
+                    <f:input path="" type="text"/>
                    
                     <label class="obinfo">* obligatory fields
                     </label>
@@ -277,47 +273,47 @@ p.agreement label{
                 <p>
                     <label>First Name *
                     </label>
-                    <input type="text" class="long"/>
+                    <f:input path="" type="text" id=""/>
                 </p>
                  <p>
                     <label>Last Name *
                     </label>
-                    <input type="text" class="long"/>
+                    <f:input path="" type="text" class=""/>
                 </p>
                 <p>
                     <label>Contact Number *
                     </label>
-                    <input type="text" maxlength="10"/>
+                    <f:input path="" type="text" maxlength="10" id=""/>
                 </p>
                 <p>
                     <label>Refrence Number *
                     </label>
-                    <input type="text" class="long"/>
+                    <f:input path="" type="text" id=""/>
                 </p>
                 <p>
                     <label>Address
                     </label>
-                    <input type="text" class="long"/>
+                    <f:input path="" type="text" id=""/>
                 </p>
                 <p>
                     <label>City *
                     </label>
-                    <input type="text" class="long"/>
+                    <f:input path="" type="text" id=""/>
                 </p>
                 <p>
                     <label>State *
                     </label>
-                    <input type="text" class="long"/>
+                    <f:input path="" type="text" id=""/>
                 </p>
                 <p>
                     <label>Zip Code *
                     </label>
-                    <input type="text" class="long"/>
+                    <f:input path="" type="text" id=""/>
                 </p>
                 <p>
                     <label>Country *
                     </label>
-                    <select>
+                    <f:select path="" id="">
                         <option>
                         </option>
                         <option value="1">United States
@@ -326,7 +322,7 @@ p.agreement label{
                         </option>
                         <option value="3">Japan
                         </option>
-                    </select>
+                    </f:select>
                 </p>
               </fieldset>
             <fieldset class="row3">
@@ -334,110 +330,20 @@ p.agreement label{
                 </legend>
                 <p>
                     <label>Gender *</label>
-                    <input type="radio" name="gender" value="radio"/>
-                    <label class="gender">Male</label>
-                    <input type="radio" name="gender" value="radio"/>
-                    <label class="gender">Female</label>
+                    <f:radiobutton path="gender" value="Male" id=""/>
+                    <label>Male</label>
+                    <f:radiobutton path="gender" value="Female" id=""/>
+                    <label>Female</label>
                 </p>
-                <p>
-                    <label>Birthdate *
+                 <p>
+                    <label>Date Of Birth (dd/mm/yyyy) *
                     </label>
-                    <select class="date">
-                        <option value="1">01
-                        </option>
-                        <option value="2">02
-                        </option>
-                        <option value="3">03
-                        </option>
-                        <option value="4">04
-                        </option>
-                        <option value="5">05
-                        </option>
-                        <option value="6">06
-                        </option>
-                        <option value="7">07
-                        </option>
-                        <option value="8">08
-                        </option>
-                        <option value="9">09
-                        </option>
-                        <option value="10">10
-                        </option>
-                        <option value="11">11
-                        </option>
-                        <option value="12">12
-                        </option>
-                        <option value="13">13
-                        </option>
-                        <option value="14">14
-                        </option>
-                        <option value="15">15
-                        </option>
-                        <option value="16">16
-                        </option>
-                        <option value="17">17
-                        </option>
-                        <option value="18">18
-                        </option>
-                        <option value="19">19
-                        </option>
-                        <option value="20">20
-                        </option>
-                        <option value="21">21
-                        </option>
-                        <option value="22">22
-                        </option>
-                        <option value="23">23
-                        </option>
-                        <option value="24">24
-                        </option>
-                        <option value="25">25
-                        </option>
-                        <option value="26">26
-                        </option>
-                        <option value="27">27
-                        </option>
-                        <option value="28">28
-                        </option>
-                        <option value="29">29
-                        </option>
-                        <option value="30">30
-                        </option>
-                        <option value="31">31
-                        </option>
-                    </select>
-                    <select>
-                        <option value="1">January
-                        </option>
-                        <option value="2">February
-                        </option>
-                        <option value="3">March
-                        </option>
-                        <option value="4">April
-                        </option>
-                        <option value="5">May
-                        </option>
-                        <option value="6">June
-                        </option>
-                        <option value="7">July
-                        </option>
-                        <option value="8">August
-                        </option>
-                        <option value="9">September
-                        </option>
-                        <option value="10">October
-                        </option>
-                        <option value="11">November
-                        </option>
-                        <option value="12">December
-                        </option>
-                    </select>
-                    <input class="year" type="text" size="4" maxlength="4"/>e.g 1976
+                    <f:input path="" type="text" id=""/>
                 </p>
                 <p>
                     <label>Nationality *
                     </label>
-                    <select>
+                    <f:select path="" id="">
                         <option value="0">
                         </option>
                         <option value="1">United States
@@ -446,39 +352,39 @@ p.agreement label{
                         </option>
                         <option value="3">Japan
                         </option>
-                    </select>
+                    </f:select>
                 </p>
                  <p>
                     <label>Blood Group 
                     </label>
-                    <input type="text" class="long"/>
+                    <f:input path="" type="text" id=""/>
                 </p>
                 <p>
                     <label>Marital Status *
                     </label>
-                    <select>
+                    <f:select path="" id="">
                         <option value="0">
                         </option>
                         <option value="1">married
                         </option>
                          <option value="2">unmarried
                         </option>
-                    </select>
+                    </f:select>
                 </p>
                 <p>
                     <label>Designation *
                     </label>
-                    <input type="text" class="long"/>
+                    <f:input path="" type="text" id=""/>
                 </p>
                 <p>
                     <label>Previous Company *
                     </label>
-                    <input type="text" class="long"/>
+                    <f:input path="" type="text" id=""/>
                 </p>
                 <p>
                     <label>Current Package *
                     </label>
-                    <input type="text" maxlength="10"/>
+                    <f:input path="" type="text" maxlength="10"/>
                 </p>
                
             </fieldset>
@@ -486,7 +392,7 @@ p.agreement label{
                 <legend>Terms and Mailing
                 </legend>
                 <p class="agreement">
-                    <input type="checkbox" value=""/>
+                    <input path="" type="checkbox" value=""/>
                     <label>*  I accept the <a href="#">Terms and Conditions</a></label>
                 </p>
                 <p class="agreement">
@@ -499,7 +405,7 @@ p.agreement label{
                 </p>
             </fieldset>
             <div><button class="button">Register &raquo;</button></div>
-        </form>
+        </f:form>
 
 </body>
 </html>

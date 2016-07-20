@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="employeeRegistration">Employee Registration</a>
+
+<form action="sendmail" method="post">
+
+<input  type="text" name="email"/>
+<input type="submit" value="submit"/>
+
+</form>
+
+
+
 </body>
 </html>
