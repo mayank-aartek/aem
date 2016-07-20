@@ -238,8 +238,19 @@ p.agreement label{
     text-align:left;
     margin-top:3px;
 }
-</style>
-      <body>    
+
+
+
+    
+    
+    </style>
+    
+    
+    
+    
+    
+    
+    <body>    
         <form action="" class="register">
             <h1>Registration</h1>
             <fieldset class="row1">
@@ -269,11 +280,6 @@ p.agreement label{
                     <input type="text" class="long"/>
                 </p>
                  <p>
-                    <label>Middle Name *
-                    </label>
-                    <input type="text" class="long"/>
-                </p>
-                 <p>
                     <label>Last Name *
                     </label>
                     <input type="text" class="long"/>
@@ -289,12 +295,17 @@ p.agreement label{
                     <input type="text" class="long"/>
                 </p>
                 <p>
-                    <label class="optional">Street
+                    <label>Address
                     </label>
                     <input type="text" class="long"/>
                 </p>
                 <p>
                     <label>City *
+                    </label>
+                    <input type="text" class="long"/>
+                </p>
+                <p>
+                    <label>State *
                     </label>
                     <input type="text" class="long"/>
                 </p>
@@ -323,9 +334,9 @@ p.agreement label{
                 </legend>
                 <p>
                     <label>Gender *</label>
-                    <input type="radio" name="Gender" value="radio" checked/>
+                    <input type="radio" name="gender" value="radio"/>
                     <label class="gender">Male</label>
-                    <input type="radio" name="Gender" value="radio"/>
+                    <input type="radio" name="gender" value="radio"/>
                     <label class="gender">Female</label>
                 </p>
                 <p>
@@ -469,6 +480,7 @@ p.agreement label{
                     </label>
                     <input type="text" maxlength="10"/>
                 </p>
+               
             </fieldset>
             <fieldset class="row4">
                 <legend>Terms and Mailing
@@ -488,5 +500,6 @@ p.agreement label{
             </fieldset>
             <div><button class="button">Register &raquo;</button></div>
         </form>
+
 </body>
 </html>
