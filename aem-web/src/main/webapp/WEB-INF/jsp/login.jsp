@@ -132,7 +132,7 @@ background:#3594D2;
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
 
-<form method="get" action="userlogin">
+<form method="post" action="login">
 <div class="box">
 <h1>Employee Login</h1>
 
@@ -140,9 +140,11 @@ background:#3594D2;
   
 <input type="password" name="email" value="email" onFocus="field_focus(this, 'email');" onblur="field_blur(this, 'email');" class="email" />
   
-<a href="#"><div class="btn">Sign In</div></a> <!-- End Btn -->
+<a href="http://localhost:8080/aem-web-0.0.1-SNAPSHOT/login"><div class="btn"> Sign In</div></a> <!-- End Btn -->
 
 <a href="#"><div id="btn2">Sign Up</div></a> <!-- End Btn2 -->
+
+<!-- <input type="submit" value="Sign In"> -->
   
 </div> <!-- End Box -->
   

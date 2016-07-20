@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,14 +19,10 @@ public class LoginController {
 	private LoginService loginService;
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String showLogin(Map<String, Object> map) {
-
-		/*
-		 * ArrayList<String> arrayList=new ArrayList<String>();
-		 * arrayList.add("java"); arrayList.add("c"); arrayList.add("ruby");
-		 * arrayList.add("php"); arrayList.add("java");
-		 */
-
+	public String showLogin(Map<String, Object> map,ModelMap model) {
+		System.out.println("login controller show method");
+		model.addAttribute("Login", new Login());
+		map.put("Login", new Login());
 		return "home";
 	}
 
@@ -39,7 +36,7 @@ public class LoginController {
 	@RequestMapping(value = "/userlogin", method = RequestMethod.POST)
 	public String loginRequest(@ModelAttribute("UserLogin") Login login) {
 
-		/*loginService.userLoginService(login);*/
+		/* loginService.userLoginService(login); */
 
 		return null;
 

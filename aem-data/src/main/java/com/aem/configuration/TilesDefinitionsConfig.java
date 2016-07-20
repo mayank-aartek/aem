@@ -40,10 +40,10 @@ public class TilesDefinitionsConfig implements DefinitionsFactory{
 	public static void addDefinitions() {
 		// TODO Auto-generated method stub
 		System.out.println("inside defination");
-		addDefaultLayoutDef("home", "home","" ,"/WEB-INF/layout/welcome-header.jsp", "/WEB-INF/layout/welcome-footer.jsp");
+		addDefaultLayoutDef("home", "login","" ,"/WEB-INF/layout/welcome-header.jsp", "/WEB-INF/layout/welcome-footer.jsp");
 		//addWelcomeLayoutDef("home", "home","/WEB-INF/layout/welcome-header.jsp", "/WEB-INF/layout/welcome-footer.jsp");
 		
-		addDefaultLayoutDef("login", "login","/WEB-INF/layout/leftheader.jsp" ,"/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
+		addDefaultLayoutDef("login", "demo","/WEB-INF/layout/leftheader.jsp" ,"/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 		addDefaultLayoutDef("employeemanagement", "employeemanagement","/WEB-INF/layout/leftheader.jsp" ,"/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 		
 		addDefaultLayoutDef("adminLogin", "adminLogin", "/WEB-INF/layout/leftheader.jsp","/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
