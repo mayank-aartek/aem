@@ -122,16 +122,19 @@ height:97px;
 <div id="logo"><img src="ass.png"></div>
 
 
-<div class="photoBox"><img id="photo" src="photo.jpg" style="width:45%; height:27%"><label id="name">Priyanka Shukla</label></div>
+<div class="photoBox"><img id="photo" src="photo.jpg" style="width:45%; height:27%"><label id="name">Software Devloper</label></div>
 
 <ul class="mainmenu">
     <li><a href="">Home</a></li>
+   <li><a href="employeemanagement">EmployeeManagement</a></li>
     <li><a href="">About</a></li>
+   
+    
     <li><a href="">Transaction</a>
       <ul class="submenu">
-        <li><a href="">Rishabh</a></li>
-        <li><a href="">Samarjeet</a></li>
-        <li><a href="">Vinay</a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
       </ul>
     </li>
     <li><a href="">Contact us</a></li>
