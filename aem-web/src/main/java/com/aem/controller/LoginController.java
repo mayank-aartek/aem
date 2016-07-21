@@ -2,6 +2,8 @@ package com.aem.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,7 +21,7 @@ public class LoginController {
 	private LoginService loginService;
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String showLogin(Map<String, Object> map,ModelMap model) {
+	public String showLogin(Map<String, Object> map, ModelMap model) {
 		System.out.println("login controller show method");
 		model.addAttribute("Login", new Login());
 		map.put("Login", new Login());
@@ -34,11 +36,18 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/userlogin", method = RequestMethod.POST)
-	public String loginRequest(@ModelAttribute("UserLogin") Login login) {
+	public String loginRequest(HttpServletRequest request) {
 
 		/* loginService.userLoginService(login); */
+		/*String email=request.getParameter("email");
+		String password=request.getParameter("password");
+		System.out.println(email+"------------------"+password);
+		System.out.println(loginService);
+		boolean status=loginService.userLoginService(email,password);
+		System.out.println("user controller--"+status);
+		*/
 
-		return null;
+		return "login";
 
 	}
 
