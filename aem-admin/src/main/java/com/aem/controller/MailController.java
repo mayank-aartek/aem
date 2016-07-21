@@ -37,8 +37,8 @@ public class MailController
 	public String sendmail(Map<String, Object> map,HttpServletRequest request){
 		
 		String email=request.getParameter("email");
-		String to=email;//change accordingly  
-		  System.out.println(email);
+		  
+		  
 		  //Get the session object  
 		  Properties props = new Properties();  
 		  props.put("mail.smtp.host", "smtp.gmail.com");  
@@ -55,7 +55,7 @@ public class MailController
 			   
 			   MimeMessage message = new MimeMessage(session);  
 			   message.setFrom(new InternetAddress("birleashish@gmail.com"));//change accordingly  
-			   message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));  
+			   message.addRecipient(Message.RecipientType.TO,new InternetAddress(email));  
 			   message.setSubject("verify");  
 			   message.setText("please click link to verify"+"<a href='http://localhost:8080/aem-admin-0.0.1-SNAPSHOT/Verify?email="+email+"'"+">"+"");  
 			     
@@ -73,7 +73,7 @@ public class MailController
 		
 		
 		
-		map.put("UserLogin", new Login());
+		map.put("Login", new Login());
 		System.out.println("Admin controller show method");		
 		return "adminLogin";
 		}
