@@ -38,16 +38,13 @@ public class LoginController {
 	@RequestMapping(value = "/userlogin", method = RequestMethod.POST)
 	public String loginRequest(HttpServletRequest request) {
 
-		/* loginService.userLoginService(login); */
-		/*String email=request.getParameter("email");
-		String password=request.getParameter("password");
-		System.out.println(email+"------------------"+password);
-		System.out.println(loginService);
-		boolean status=loginService.userLoginService(email,password);
-		System.out.println("user controller--"+status);
-		*/
-
-		return "login";
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		boolean loginStatus = loginService.userLoginService(email, password);
+		if (loginStatus) {
+			return "login";
+		}
+		return "home";
 
 	}
 
