@@ -15,7 +15,7 @@ public class AddEmployeeServiceimpl implements AddEmployeeService {
 	@Autowired
 	private AddEmployeeRepository addEmployeeRepository;
 	
-	@SuppressWarnings("unused")
+	
 	public boolean save(AddEmployee addEmployee) {
 		
 		System.out.println("inside before service");
@@ -23,13 +23,8 @@ public class AddEmployeeServiceimpl implements AddEmployeeService {
 		addEmp =  addEmployeeRepository.save(addEmployee);
 		System.out.println(addEmp.getAddress());
 		System.out.println("after service method");
-		if (addEmp == null) {
-		 
+		System.out.println(addEmp.getId());
 		return false;
-	} else {
-		 
-		return true;
-	}
 	
 		
 	}

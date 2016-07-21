@@ -37,12 +37,12 @@ public class AddEmployeeController {
 		boolean status=addEmployeeService.save(addEmployee);
 		
 		System.out.println(status);
-		if(status==false)
+		if(status==true)
 		{
 			Map<String, String> map=new HashMap<String,String>();
 			map.put("unsucessfull"," Registration fail");
 			System.out.println("unsucessful registration");
-			return "addEmployee";
+			return "employeeRegistration";
 
 		}
 		else
@@ -51,7 +51,7 @@ public class AddEmployeeController {
 			System.out.println("inside registration");
 			model.addAttribute("AddEmployee",new AddEmployee());
 			
-			return "redirect:/adminLogin.do";
+			return "employeeRegistration";
 		}
 
 	}
