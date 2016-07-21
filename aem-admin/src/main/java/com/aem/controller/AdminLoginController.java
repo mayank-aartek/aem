@@ -21,7 +21,8 @@ public class AdminLoginController {
 	public String showLogin(Map<String, Object> map){
 		
 		map.put("Login", new Login());
-		System.out.println("Admin controller show method");		
+		System.out.println("Admin controller show method");	
+		
 		return "adminLogin";
 		}
 	
