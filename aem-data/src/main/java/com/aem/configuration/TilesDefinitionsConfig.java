@@ -42,7 +42,7 @@ public class TilesDefinitionsConfig implements DefinitionsFactory{
 		
 		addDefaultLayoutDef("home", "login","" ,"/WEB-INF/layout/welcome-header.jsp", "/WEB-INF/layout/welcome-footer.jsp");
 		//addWelcomeLayoutDef("home", "home","/WEB-INF/layout/welcome-header.jsp", "/WEB-INF/layout/welcome-footer.jsp");
-		
+				
 		addDefaultLayoutDef("login", "demo","/WEB-INF/layout/leftheader.jsp" ,"/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 		addDefaultLayoutDef("employeemanagement", "employeemanagement","/WEB-INF/layout/leftheader.jsp" ,"/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 		
