@@ -10,25 +10,25 @@ public class Login implements Serializable
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ID")
-	Integer Id;
+     private Integer Id;
 	@Column(name="EMAIL")
-	String email;
+	 private String email;
 	@Column(name="PASSWORD")
-	String Password;
+	 private String Password;
 	@Column(name="ENCRYPTED")
-	String	encrypted;
+	 private String	encrypted;
 	@Column(name="CREATION_TIME")
-	String creationTime;
+	 private String creationTime;
 	@Column(name="UPDATION_TIME")
-	String updationTime;
+	 private String updationTime;
 	@Column(name="IS_DELETED")
-	String isDeleted;
+	 private String isDeleted;
 	@Transient
-	String oldPassword;
+	 private String oldPassword;
 	@Transient
-	String newPassword;
+	 private String newPassword;
 	@Transient
-	String confirmPassword;
+	 private String confirmPassword;
 	public Integer getId() {
 		return Id;
 	}
