@@ -23,6 +23,17 @@ body {
   font-size: 38%;
   line-height: 1;
   padding-top: 5px;
+  /* margin-top: 97px;
+  margin-bottom: 0px;
+  margin-left: 20%x;  */
+}
+
+#maindiv{
+	height: 100%;
+	margin-left: 20%;
+	margin-top: 97px;
+	margin-bottom: 30px;
+	
 }
 
 input, textarea { 
