@@ -2,7 +2,7 @@ package com.aem.service;
 
 import com.aem.model.AddEmployee;
 
-public interface AddEmployeeService {
+public interface AddEmployeeService extends Service<AddEmployee> {
 
-	public AddEmployee addEmployeeService(AddEmployee addEmployee);
+	public boolean saveEmployeeService(AddEmployee addEmployee);
 }

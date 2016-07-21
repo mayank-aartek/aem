@@ -49,6 +49,7 @@ public class TilesDefinitionsConfig implements DefinitionsFactory{
 		addDefaultLayoutDef("adminLogin", "adminLogin", "/WEB-INF/layout/leftheader.jsp","/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 	    addDefaultLayoutDef("employeeRegistration", "employeeRegistration", "/WEB-INF/layout/leftheader.jsp","/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 	    addDefaultLayoutDef("welcomePage", "welcomePage", "/WEB-INF/layout/leftheader.jsp","/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
+	    addDefaultLayoutDef("profile", "profile", "/WEB-INF/layout/leftheader.jsp","/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 	    addDefaultLayoutDef("mail", "sendmail", "","", "");
 		
 		

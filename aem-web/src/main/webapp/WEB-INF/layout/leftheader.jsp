@@ -98,7 +98,7 @@ font-size:120%;
 
 }
 #photo{
-background-color: #ccc;
+background-color: #f2f2f2;
 border-radius:50%;
 
 }
@@ -132,7 +132,7 @@ height:auto;
     
     <li><a href="">Transaction</a>
       <ul class="submenu">
-        <li><a href=""></a></li>
+        <li><a href="http://localhost:8080/aem-web-0.0.1-SNAPSHOT/showProfile">Profile</a></li>
         <li><a href=""></a></li>
         <li><a href=""></a></li>
       </ul>
@@ -140,7 +140,5 @@ height:auto;
     <li><a href="">Contact us</a></li>
   </ul>
 </div>
-
-
 </body>
 </html>

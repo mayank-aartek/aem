@@ -69,6 +69,7 @@ main {
   padding: 100px;
   margin: 0 auto;
   background: #fff;
+  border:
 }
 
 section {
@@ -160,13 +161,14 @@ overflow: scroll;
 .responstable {
   margin: 2em 0;
   width: auto;
-  overflow:scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
   background: #FFF;
   color: #024457;
   border-radius: 10px;
   border: 1px solid #167F92;
   font-family:times new roman;
-  
+  height:100px;
 }
 .responstable#t2 {
   margin: 2em 0;
@@ -360,7 +362,44 @@ th
 
 
     </style>
+<script type="text/javascript">
 
+
+
+
+
+$('#some_id').on('change', function() {
+  alert( this.value ); // or $(this).val()
+
+var page1=document.getElementById("sel").value;
+alert(page1);
+
+pageSize = page1;
+
+var pageCount =  $(".line-content").length / pageSize;
+
+ for(var i = 0 ; i<pageCount;i++){
+    
+   $("#container").append('<a href="#">'+(i+1)+'</a> ');
+ }
+    $("#container").first().find("a").addClass("page")
+showPage = function(page) {
+    $(".line-content").hide();
+    $(".line-content").each(function(n) {
+        if (n >= pageSize * (page - 1) && n < pageSize * page)
+            $(this).show();
+    });        
+}
+showPage(1);
+
+$("#container").click(function() {
+    $("#container").removeClass("page");
+    $(this).addClass("page");
+    showPage(parseInt($(this).text())) 
+});
+
+
+</script>
     
         
 
@@ -386,7 +425,8 @@ th
 <form >
 <div id="tab">
 <table class="responstable" id="t2">
-<tr style="background:rgb(234,243,243)"> Show<select><option>select<option></select> &nbsp;enteries &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+<tr style="background:rgb(234,243,243)"> Show<select id="sel"><option>select<option/>
+<option value="2">2 <option/><option value="4">4<option/></select> &nbsp;enteries &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
  Search <input type="text" style="width:68px"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Select Month <input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#">View Timesheet</a> &nbsp;&nbsp;     <a href="#">Add Current/Past Week's Timesheet</a></tr>
 
@@ -396,35 +436,28 @@ Select Month <input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#">View
     <th>Total(Hrs)</th>
     <th>Approve Status</th>
   </tr>
-  
- 
+  <div class="line-content">
+ <c:forEach items="${emplist}" var="emlist" >
   
 
 
   <tr>
-   <td></td>
-   <td></td>
-   <td></td>
+  
+   <td><c:out value="${emlist.project}"></c:out></td>
+   <td><c:out value="${emlist.date}"></c:out></td>
+   <td><c:out value="${emlist.totalHours}"></c:out></td>
    
-   <td></td>
+   <td><c:out value="${emlist.approveStatus}"></c:out></td>
 
   </tr>
- 
-  
+</c:forEach> 
+  </div>
  
 
 
  
   
 </table>
-</div>
-
-</form >
-
-
-</body>
-<footer>
-
 <div id="container">
  <div class="pagination" style="text-align:right">
 
@@ -435,8 +468,13 @@ Select Month <input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#">View
   class="page">last</a>
  </div>
 </div>
+</div>
 
-</footer> 
+</form >
+
+
+</body>
+
 
 
 
