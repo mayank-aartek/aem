@@ -10,7 +10,7 @@
 
 <form action="sendmail" method="post">
 
-<input  type="text" name="email"/>
+Enter Email<input  type="text" name="email"/>
 <input type="submit" value="submit"/>
 
 </form>
