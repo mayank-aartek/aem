@@ -110,19 +110,19 @@ height:100%;
 }
 
 #logo{
-background-color:red;
-width:100%;
-height:97px;
+background-color:white;
+width:auto;
+height:auto;
 }
 
 </style>
 
 <body>
 <div class="mainmenuBox">
-<div id="logo"><img src="ass.png"></div>
+<div id="logo"><img style="height: 100px; width: 270px;" src="resources/images/logo.png"></div>
 
 
-<div class="photoBox"><img id="photo" src="photo.jpg" style="width:45%; height:27%"><label id="name">Software Devloper</label></div>
+<div class="photoBox"><img id="photo" src="resources/images/photo.jpg" style="width:45%; height:27%"><label id="name">Software Devloper</label></div>
 
 <ul class="mainmenu">
     <li><a href="">Home</a></li>
