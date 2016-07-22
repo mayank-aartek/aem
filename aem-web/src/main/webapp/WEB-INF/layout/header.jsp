@@ -17,16 +17,66 @@ top:0;
 right:0%;
 left:20%;
 float: right;
+}
+.dropbtn {
+/* background:url(resources/images/images.png) no-repeat;
+ */    background-color: #00349a;
+    color: white;
+    height: 10px;
+    padding: 10px;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+}
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color:;
 }
 
 </style>
+</head>
+<body>
 <div class="headerBox" style="text-align: center;font-size:200%;">
 <label style="position:relative;top:20%;color:white;text-decoration:none;">Aartek Employee Management</label>
 </div>
-</head>
-
+<div class="dropdown" style="float:right;">
+ <img src="resources/images/icon-single-person.gif" width="60" height="50">
+  <button class="dropbtn"><img src="resources/images/images.png" width="20" height="20"></button>
+  <!-- <img src="resources/images/images.png" width="30" height="30"> -->
+  
+  <div class="dropdown-content">
+    <a href="#">User Profile</a>
+    <a href="#">Logout</a>
+    <!-- <a href="#">Link 3</a> -->
+  </div>
+</div>
 <body>
 </body>
 </html>
