@@ -293,7 +293,7 @@ form:after {
 				<a href="#">Lost your password?</a>
 			</div>
 		</f:form><!-- form -->
-		
+		<h2 style="color: red;">${invalide}</h2>
 	</section><!-- content -->
 </div><!-- container -->
 </body>
