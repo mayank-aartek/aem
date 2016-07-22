@@ -25,18 +25,18 @@ text-align: center;
 
 .mainmenu a {
   display: block;
-  background-color: #001a4d;
+  background-color: #00349a;
   text-decoration: none;
   padding: 10px;
   
 }
 
 .mainmenu a:hover {
-    background-color: #cc7a00;
+    background-color: white; /*  #cc7a00 */
 }
 
 .mainmenu.submenu{
-background-color:#1a53ff;
+background-color:#00349a;
 
 }
 
@@ -78,7 +78,7 @@ position:absolute;
 top:0;
 left:0;
 height: 100%;
-background-color:#001a4d;
+background-color: #00349a;
 
 }
 
