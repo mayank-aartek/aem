@@ -255,13 +255,13 @@ p.agreement label{
                 <p>
                     <label>Email *
                     </label>
-                    <f:input path="" type="text" id=""/>
+                    <f:input path="email" type="text" id="email"/>
                     
                 </p>
                 <p>
                     <label>Password*
                     </label>
-                    <f:input path="" type="text"/>
+                    <f:input path="password" type="text" id="password"/>
                    
                     <label class="obinfo">* obligatory fields
                     </label>
@@ -273,47 +273,47 @@ p.agreement label{
                 <p>
                     <label>First Name *
                     </label>
-                    <f:input path="" type="text" id=""/>
+                    <f:input path="firstName" type="text" id="firstName"/>
                 </p>
                  <p>
                     <label>Last Name *
                     </label>
-                    <f:input path="" type="text" class=""/>
+                    <f:input path="lastName" type="text" id="lastName"/>
                 </p>
                 <p>
                     <label>Contact Number *
                     </label>
-                    <f:input path="" type="text" maxlength="10" id=""/>
+                    <f:input path="contactNo" type="text" maxlength="10" id="contactNo"/>
                 </p>
                 <p>
                     <label>Refrence Number *
                     </label>
-                    <f:input path="" type="text" id=""/>
+                    <f:input path="refrenceNo" type="text" id="refrenceNo"/>
                 </p>
                 <p>
                     <label>Address
                     </label>
-                    <f:input path="" type="text" id=""/>
+                    <f:input path="address" type="text" id="address"/>
                 </p>
                 <p>
                     <label>City *
                     </label>
-                    <f:input path="" type="text" id=""/>
+                    <f:input path="city" type="text" id="city"/>
                 </p>
                 <p>
                     <label>State *
                     </label>
-                    <f:input path="" type="text" id=""/>
+                    <f:input path="state" type="text" id="state"/>
                 </p>
                 <p>
                     <label>Zip Code *
                     </label>
-                    <f:input path="" type="text" id=""/>
+                    <f:input path="zipCode" type="text" id="zipCode"/>
                 </p>
                 <p>
                     <label>Country *
                     </label>
-                    <f:select path="" id="">
+                    <f:select path="country" id="country">
                         <option>
                         </option>
                         <option value="1">United States
@@ -330,20 +330,20 @@ p.agreement label{
                 </legend>
                 <p>
                     <label>Gender *</label>
-                    <f:radiobutton path="gender" value="Male" id=""/>
+                    <f:radiobutton path="gender" value="Male" id="gender"/>
                     <label>Male</label>
-                    <f:radiobutton path="gender" value="Female" id=""/>
+                    <f:radiobutton path="gender" value="Female" id="gender"/>
                     <label>Female</label>
                 </p>
                  <p>
                     <label>Date Of Birth (dd/mm/yyyy) *
                     </label>
-                    <f:input path="" type="text" id=""/>
+                    <f:input path="DOB" type="text" id="DOB"/>
                 </p>
                 <p>
                     <label>Nationality *
                     </label>
-                    <f:select path="" id="">
+                    <f:select path="nationality" id="nationality">
                         <option value="0">
                         </option>
                         <option value="1">United States
@@ -357,12 +357,12 @@ p.agreement label{
                  <p>
                     <label>Blood Group 
                     </label>
-                    <f:input path="" type="text" id=""/>
+                    <f:input path="bloodGroup" type="text" id="bloodGroup"/>
                 </p>
                 <p>
                     <label>Marital Status *
                     </label>
-                    <f:select path="" id="">
+                    <f:select path="maritalStatus" id="maritalStatus">
                         <option value="0">
                         </option>
                         <option value="1">married
@@ -374,17 +374,17 @@ p.agreement label{
                 <p>
                     <label>Designation *
                     </label>
-                    <f:input path="" type="text" id=""/>
+                    <f:input path="designation" type="text" id="designation"/>
                 </p>
                 <p>
                     <label>Previous Company *
                     </label>
-                    <f:input path="" type="text" id=""/>
+                    <f:input path="previousCompany" type="text" id="previousCompany"/>
                 </p>
                 <p>
                     <label>Current Package *
                     </label>
-                    <f:input path="" type="text" maxlength="10"/>
+                    <f:input path="currentPackage" type="text" maxlength="10" id="currentPackage"/>
                 </p>
                
             </fieldset>
