@@ -13,6 +13,8 @@
 {
 margin-top:0px;
 text-align: center; 
+ font-size: 130%;
+ color:black;
 
 }
 
@@ -28,6 +30,7 @@ text-align: center;
   background-color: #00349a;
   text-decoration: none;
   padding: 10px;
+  color:black;
   
 }
 
@@ -57,7 +60,7 @@ background-color:#00349a;
 
 /* hover behaviour for links inside .submenu */
 .submenu a:hover {
-  background-color:#cc7a00;
+  background-color:white;
 }
 
 /* this is the initial state of all submenus.
@@ -119,7 +122,7 @@ height:97px;
 
 <body>
 <div class="mainmenuBox">
-<div id="logo"><img style="height: 100px; width: 270px;" src="resources/images/logo.png"></div>
+<div id="logo"><img style="height: 100%; width: 100%;" src="resources/images/logo.png"></div>
 
 
 <div class="photoBox"><img id="photo" src="resources/images/photo.jpg" style="width:45%; height:27%"><label id="name">Software Devloper</label></div>
