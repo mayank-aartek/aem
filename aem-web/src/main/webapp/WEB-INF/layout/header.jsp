@@ -23,7 +23,7 @@ float: right;
 
 </style>
 <div class="headerBox" style="text-align: center;font-size:200%;">
-<label style="position:relative;top:20%;color:#FFFAFA;opacity:0.5;text-decoration: underline;">Aartek Employee Management</label>
+<label style="position:relative;top:20%;color:white;text-decoration:none;">Aartek Employee Management</label>
 </div>
 </head>
 

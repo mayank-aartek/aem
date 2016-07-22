@@ -111,8 +111,8 @@ height:100%;
 
 #logo{
 background-color:white;
-width:auto;
-height:auto;
+width:100%;
+height:97px;
 }
 
 </style>
