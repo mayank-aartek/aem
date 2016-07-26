@@ -116,7 +116,7 @@ html, body {
  
   margin-left:100px;
   margin-top:50px; 
-   
+  margin-bottom:150px;   
 }
 
 body {
@@ -140,15 +140,18 @@ main {
   min-width: 320px;
   max-width: 900px;
   padding: 100px;
-  margin: 0 auto;
+  margin-bottom: 100px;
   background: #fff;
-  border:
+ 
+  padding-bottom:100px;
 }
 
 section {
   display: none;
   padding: 20px 0 0;
   border-top: 1px solid #ddd;
+
+  overflow-y:hidden;
 }
 
 input.t {
