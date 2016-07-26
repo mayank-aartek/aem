@@ -10,7 +10,9 @@
     <meta charset="UTF-8">
     <title>Resource Management System</title>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <spring:url value="/resources/js/paging.js" var="pagingjs" /> 
+  <!-- Load jQuery JS for dynamic row in maintence table -->
+  <spring:url value="/resources/js/dynamicRow.js" var="addNewRow" />  
+  <script src="${addNewRow}"></script>    
     <!-- Load jQuery JS -->
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <!-- Load jQuery UI Main JS  -->
@@ -446,6 +448,48 @@ Select Month <input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#">View
  pager.showPageNav('pager', 'pageNavPosition'); 
  pager.showPage(1);
     </script>
+    
+    
+    <script type="text/javascript">
+    
+    $(document).ready(function(){
+    	var i=0;
+    	$("#addnew").click(function(){
+    	 alert(1);
+
+    	 var table = document.getElementById("myTable");
+    	    var row = table.insertRow(5);
+    	 row.id=i;
+    	 
+    	    var cell1 = row.insertCell(0);
+    	    var cell2 = row.insertCell(1);
+    	 var cell3 = row.insertCell(2);
+    	  var cell4 = row.insertCell(3);
+    	    var cell5 = row.insertCell(4);
+    	 var cell6 = row.insertCell(5);
+    	  var cell7 = row.insertCell(6);
+    	    var cell8 = row.insertCell(7);
+    	 var cell9 = row.insertCell(8);
+    	 var cell10 = row.insertCell(9);
+    	    cell1.innerHTML = "";
+    	    cell2.innerHTML = "<select><option>select</option></select>";
+    	  cell3.innerHTML = "<select><option>select</option></select>";
+    	 cell4.innerHTML = "<input type='text'/>";
+    	 cell5.innerHTML = "<input type='text' style='width:68px'/>";
+    	 cell6.innerHTML = "<input type='text' style='width:68px'/>";
+    	 cell7.innerHTML = "<input type='text' style='width:68px'/>";
+    	 cell8.innerHTML = "<input type='text' style='width:68px'/>";
+    	 cell9.innerHTML = "<input type='text' style='width:68px'/>";
+    	 cell10.innerHTML = "<input type='text' style='width:68px'/>"; 
+    	 alert(row.id);
+    	i++; 
+    	});}); 
+    
+    
+    </script>
+    
+    
+    
 </body>
 
 
@@ -461,9 +505,9 @@ Select Month <input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#">View
 <body>
 <form >
 <div id="tab">
-<table class="responstable">
+<table id="myTable" class="responstable">
 <tr colspan="5">Start Date<input type="text" class="datepicker" /> End Date
-<input type="text" class="datepicker" />&nbsp;&nbsp;<a href="#">Add new</a></tr>
+<input type="text" class="datepicker" />&nbsp;&nbsp;<button id="addnew" type="button" >ADD NEW</button></tr>
  <div style="font-size:10px;">
   <tr>
     <th rowspan="3">Status</th>
@@ -492,7 +536,7 @@ Select Month <input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#">View
   </tr>
 </div>
   <tr>
-   <td></td>
+   <td ></td>
    <td><select><option>select<option></select></td>
    <td><select><option>select<option></select></td>
    <td><input type="text" /></td>

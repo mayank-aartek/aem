@@ -72,7 +72,7 @@ float: right;
   <!-- <img src="resources/images/images.png" width="30" height="30"> -->
   
   <div class="dropdown-content">
-    <a href="#">User Profile</a>
+    <a href="http://localhost:8080/aem-web-0.0.1-SNAPSHOT/showProfile">User Profile</a>
     <a href="#">Logout</a>
     <!-- <a href="#">Link 3</a> -->
   </div>
