@@ -4,13 +4,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-
+ <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html >
   <head>
     <meta charset="UTF-8">
     <title>Resource Management System</title>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    
+    <spring:url value="/resources/js/paging.js" var="pagingjs" /> 
     <!-- Load jQuery JS -->
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <!-- Load jQuery UI Main JS  -->
@@ -28,6 +28,79 @@
 
 );
 </script>
+    <script>
+    function Pager(tableName, itemsPerPage) {
+  alert("hi");
+	this.tableName = tableName;
+    this.itemsPerPage = itemsPerPage;
+    this.currentPage = 1;
+    this.pages = 0;
+    this.inited = false;
+    
+    this.showRecords = function(from, to) {        
+        var rows = document.getElementById(tableName).rows;
+        // i starts from 1 to skip table header row
+        for (var i = 1; i <= rows.length; i++) {
+            if (i < from || i > to)  
+                rows[i+1].style.display = 'none';
+            else
+                rows[i+1].style.display = '';
+        }
+    }
+    
+    this.showPage = function(pageNumber) {
+    	if (! this.inited) {
+    		alert("not inited");
+    		return;
+    	}
+
+        var oldPageAnchor = document.getElementById('pg'+this.currentPage);
+        oldPageAnchor.className = 'pg-normal';
+        
+        this.currentPage = pageNumber;
+        var newPageAnchor = document.getElementById('pg'+this.currentPage);
+        newPageAnchor.className = 'pg-selected';
+        
+        var from = (pageNumber - 1) * itemsPerPage + 1;
+        var to = from + itemsPerPage - 1;
+        this.showRecords(from, to);
+    }   
+    
+    this.prev = function() {
+        if (this.currentPage > 1)
+            this.showPage(this.currentPage - 1);
+    }
+    
+    this.next = function() {
+        if (this.currentPage < this.pages) {
+            this.showPage(this.currentPage + 1);
+        }
+    }                        
+    
+    this.init = function() {
+        var rows = document.getElementById(tableName).rows;
+        var records = (rows.length - 1); 
+        this.pages = Math.ceil(records / itemsPerPage);
+        this.inited = true;
+    }
+
+    this.showPageNav = function(pagerName, positionId) {
+    	if (! this.inited) {
+    		alert("not inited");
+    		return;
+    	}
+    	var element = document.getElementById(positionId);
+    	
+    	var pagerHtml = '<span onclick="' + pagerName + '.prev();" class="pg-normal"> &#171 Prev </span> | ';
+        for (var page = 1; page <= this.pages; page++) 
+            pagerHtml += '<span id="pg' + page + '" class="pg-normal" onclick="' + pagerName + '.showPage(' + page + ');">' + page + '</span> | ';
+        pagerHtml += '<span onclick="'+pagerName+'.next();" class="pg-normal"> Next &#187;</span>';            
+        
+        element.innerHTML = pagerHtml;
+    }
+}
+    </script>
+    
     
         <style>
       /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
@@ -43,7 +116,7 @@ html, body {
  
   margin-left:100px;
   margin-top:50px; 
-   
+  margin-bottom:150px;   
 }
 
 body {
@@ -67,15 +140,18 @@ main {
   min-width: 320px;
   max-width: 900px;
   padding: 100px;
-  margin: 0 auto;
+  margin-bottom: 100px;
   background: #fff;
-  border:
+ 
+  padding-bottom:100px;
 }
 
 section {
   display: none;
   padding: 20px 0 0;
   border-top: 1px solid #ddd;
+
+  overflow-y:hidden;
 }
 
 input.t {
@@ -274,134 +350,24 @@ th
 
 
 
-#container {
-    width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+
+
+
+#results{
+margin: 2em 0;
+  width: 100%;
+  overflow:scroll;
+  background: #FFF;
+  color: #024457;
+  border-radius: 10px;
+  border: 1px solid #167F92;
+  font-family:times new roman;
 }
-
-.btn {
-    display: inline-block;
-    padding: 10px;
-    border-radius: 5px; /*optional*/
-    color: #aaa;
-    font-size: .875em;
-}
-
-.pagination {
-    background: #FFFFFF;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.page {
-    display: inline-block;
-    padding: 0px 9px;
-    margin-right: 4px;
-    border-radius: 3px;
-    border: solid 1px #c0c0c0;
-    background: #e9e9e9;
-    box-shadow: inset 0px 1px 0px rgba(255,255,255, .8), 0px 1px 3px rgba(0,0,0, .1);
-    font-size: .875em;
-    font-weight: bold;
-    text-decoration: none;
-    color: #717171;
-    text-shadow: 0px 1px 0px rgba(255,255,255, 1);
-}
-
-.page:hover, .page.gradient:hover {
-    background: #fefefe;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FEFEFE), to(#f0f0f0));
-    background: -moz-linear-gradient(0% 0% 270deg,#FEFEFE, #f0f0f0);
-}
-
-.page.active {
-    border: none;
-    background: #616161;
-    box-shadow: inset 0px 0px 8px rgba(0,0,0, .5), 0px 1px 0px rgba(255,255,255, .8);
-    color: #f0f0f0;
-    text-shadow: 0px 0px 3px rgba(0,0,0, .5);
-}
-
-.page.gradient {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f8f8f8), to(#e9e9e9));
-    background: -moz-linear-gradient(0% 0% 270deg,#f8f8f8, #e9e9e9);
-}
-
-.pagination.dark {
-    background: #414449;
-    color: #feffff;
-}
-
-.page.dark {
-    border: solid 1px #32373b;
-    background: #3e4347;
-    box-shadow: inset 0px 1px 1px rgba(255,255,255, .1), 0px 1px 3px rgba(0,0,0, .1);
-    color: #feffff;
-    text-shadow: 0px 1px 0px rgba(0,0,0, .5);
-}
-
-.page.dark:hover, .page.dark.gradient:hover {
-    background: #3d4f5d;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#547085), to(#3d4f5d));
-    background: -moz-linear-gradient(0% 0% 270deg,#547085, #3d4f5d);
-}
-
-.page.dark.active {
-    border: none;
-    background: #2f3237;
-    box-shadow: inset 0px 0px 8px rgba(0,0,0, .5), 0px 1px 0px rgba(255,255,255, .1);
-}
-
-.page.dark.gradient {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#565b5f), to(#3e4347));
-    background: -moz-linear-gradient(0% 0% 270deg,#565b5f, #3e4347);
-}
-
-
-
 
     </style>
-<script type="text/javascript">
 
-
-
-
-
-$('#some_id').on('change', function() {
-  alert( this.value ); // or $(this).val()
-
-var page1=document.getElementById("sel").value;
-alert(page1);
-
-pageSize = page1;
-
-var pageCount =  $(".line-content").length / pageSize;
-
- for(var i = 0 ; i<pageCount;i++){
-    
-   $("#container").append('<a href="#">'+(i+1)+'</a> ');
- }
-    $("#container").first().find("a").addClass("page")
-showPage = function(page) {
-    $(".line-content").hide();
-    $(".line-content").each(function(n) {
-        if (n >= pageSize * (page - 1) && n < pageSize * page)
-            $(this).show();
-    });        
-}
-showPage(1);
-
-$("#container").click(function() {
-    $("#container").removeClass("page");
-    $(this).addClass("page");
-    showPage(parseInt($(this).text())) 
-});
-
-
-</script>
-    
-        
+   
+       
 
     
   </head>
@@ -422,21 +388,23 @@ $("#container").click(function() {
     
   <section id="content1">
 <body>
-<form >
+<form enctype="application/x-www-form-urlencoded" >
 <div id="tab">
-<table class="responstable" id="t2">
-<tr style="background:rgb(234,243,243)"> Show<select id="sel"><option>select<option/>
-<option value="2">2 <option/><option value="4">4<option/></select> &nbsp;enteries &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+<table class="responstable" id="results">
+<tr style="background:rgb(234,243,243)"> Show<select id="sel" onchange="load1(this.value)">
+<option value="2">2</option><option value="4">4</option></select> &nbsp;enteries &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
  Search <input type="text" style="width:68px"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Select Month <input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#">View Timesheet</a> &nbsp;&nbsp;     <a href="#">Add Current/Past Week's Timesheet</a></tr>
 
+ <thead>
   <tr>
     <th>Project</th>
     <th>Week End Date</th>
     <th>Total(Hrs)</th>
     <th>Approve Status</th>
-  </tr>
-  <div class="line-content">
+	</tr>
+  </thead>
+  
  <c:forEach items="${emplist}" var="emlist" >
   
 
@@ -458,21 +426,26 @@ Select Month <input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#">View
  
   
 </table>
-<div id="container">
- <div class="pagination" style="text-align:right">
+<div id="pageNavPosition"></div>
 
-  <a href="#" class="page">first</a><a href="#" class=
-  "page">2</a><a href="#" class="page">3</a><a href="#" class="page">4</a>
-  <a href="#" class=
-  "page">5</a><a href="#" class="page">6</a><a href="#"
-  class="page">last</a>
- </div>
-</div>
-</div>
+
 
 </form >
-
-
+</div>
+ <script type="text/javascript">
+ val2=document.getElementById("sel").value;
+ function load1(val1){
+	 val2=val1
+        var pager = new Pager('results',parseInt(val1)); 
+        pager.init(); 
+        pager.showPageNav('pager', 'pageNavPosition'); 
+        pager.showPage(1);
+ };
+ var pager = new Pager('results',parseInt(val2)); 
+ pager.init(); 
+ pager.showPageNav('pager', 'pageNavPosition'); 
+ pager.showPage(1);
+    </script>
 </body>
 
 
