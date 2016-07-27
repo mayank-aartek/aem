@@ -25,18 +25,18 @@ text-align: center;
 
 .mainmenu a {
   display: block;
-  background-color: #001a4d;
+  background-color: #ffbf00;
   text-decoration: none;
   padding: 10px;
   
 }
 
 .mainmenu a:hover {
-    background-color: #cc7a00;
+    background-color: #ffbf00;
 }
 
 .mainmenu.submenu{
-background-color:#1a53ff;
+background-color:#ffbf00;
 
 }
 
@@ -52,12 +52,12 @@ background-color:#1a53ff;
 */
 
 .submenu a {
-  background-color:#1a53ff;    
+  background-color:#ffbf00;    
 }
 
 /* hover behaviour for links inside .submenu */
 .submenu a:hover {
-  background-color:#cc7a00;
+  background-color:#ffbf00;
 }
 
 /* this is the initial state of all submenus.
@@ -78,7 +78,7 @@ position:absolute;
 top:0;
 left:0;
 height: 100%;
-background-color:#001a4d;
+background-color:#ffbf00;
 
 }
 
@@ -98,7 +98,7 @@ font-size:120%;
 
 }
 #photo{
-background-color: #ccc;
+background-color:#00bfff;
 border-radius:50%;
 
 }
@@ -110,7 +110,7 @@ height:100%;
 }
 
 #logo{
-background-color:red;
+background-color:#00bfff;
 width:100%;
 height:97px;
 }
