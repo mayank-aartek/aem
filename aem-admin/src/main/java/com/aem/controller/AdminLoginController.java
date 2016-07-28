@@ -45,8 +45,9 @@ public class AdminLoginController {
 			return "adminLogin";
 			
 		}
-		map.put("AddEmployee", new AddEmployee());
-		return "employeeRegistration";
+		System.out.println("hiiiii");
+		//map.put("AddEmployee", new AddEmployee());
+		return "empty";
 
 	
 	}

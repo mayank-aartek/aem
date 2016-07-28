@@ -42,6 +42,7 @@ body {
 	position: relative;
 }
 h1{ font-size:28px;}
+.myh1{ font-size:28px;}
 h2{ font-size:26px;}
 h3{ font-size:18px;}
 h4{ font-size:16px;}
@@ -64,7 +65,7 @@ form:after {
 	clear: both;
 	visibility: hidden;
 }
-.container { margin: 25px auto; position: relative; width: 900px; }
+.container { margin: 25px auto; position: relative; width: 900px; height:503px;}
 #content {
 	background: #f9f9f9;
 	background: -moz-linear-gradient(top,  rgba(248,248,248,1) 0%, rgba(249,249,249,1) 100%);
