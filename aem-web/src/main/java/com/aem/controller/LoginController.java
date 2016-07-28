@@ -20,7 +20,7 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
+/*	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String showLogin(Map<String, Object> map, ModelMap model) {
 		System.out.println("login controller show method");
 		model.addAttribute("Login", new Login());
@@ -28,12 +28,12 @@ public class LoginController {
 		return "home";
 	}
 
-	/* showing login page after click on home hyperlink */
+	 showing login page after click on home hyperlink 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String displayLogin(Map<String, Object> map) {
 		System.out.println("login controller");
 		return "login";
-	}
+	}*/
 
 	@RequestMapping(value = "/userlogin", method = RequestMethod.POST)
 	public String loginRequest(HttpServletRequest request) {
@@ -42,9 +42,9 @@ public class LoginController {
 		String password = request.getParameter("password");
 		boolean loginStatus = loginService.userLoginService(email, password);
 		if (loginStatus) {
-			return "login";
+			return "home";
 		}
-		return "home";
+		return "dashboard";
 
 	}
 
