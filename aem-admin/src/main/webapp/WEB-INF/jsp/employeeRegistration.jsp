@@ -25,7 +25,7 @@ body, html {
     color: #373C40;
     font-family: Verdana,Arial, Helvetica, sans-serif;
     height: 100%;
-    width:100%;
+    width:120%;
     background-color: #f0f0f0;
     margin:10px;
 }
@@ -61,12 +61,13 @@ h4 {
     text-transform:uppercase;
 }
 form.register{
-    width:800px;
+    width:1200px;
 /*     margin: 20px auto 0px auto;
  */    height:500px;
     background-color:#fff;
     padding:5px;
-    margin-left:25%;
+    margin-left:9%;
+    margin-right:0%;
  /*    -moz-border-radius:20px;
     -webkit-border-radius:20px;
  */}
@@ -104,6 +105,7 @@ form.register fieldset.row2
    /*  height:220px; */
     padding:5px;
     float:left;
+    width: 20;
 }
 form.register fieldset.row3
 {
