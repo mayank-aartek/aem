@@ -41,10 +41,11 @@ public class LoginController {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		boolean loginStatus = loginService.userLoginService(email, password);
+		System.out.println(loginStatus);
 		if (loginStatus) {
-			return "home";
+			return "dashboard";
 		}
-		return "dashboard";
+		return "home";
 
 	}
 
