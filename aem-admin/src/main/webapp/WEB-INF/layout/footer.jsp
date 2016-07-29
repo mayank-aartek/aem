@@ -10,8 +10,9 @@
 		footer {
 		
     padding: 1em;
-    color: #563d64;
+    color: white;
     background-color: grey;
+    font-size: 20px;
     font-weight:bold;
     clear: left;
    /*  margin-top: 497px; */
@@ -20,7 +21,7 @@
 }
 		</style>
 		
-		<footer>Copyright @http://aartek.com</footer>
+		<footer><a href="http://aartek.co.in/">&copyAartek software solutions 2016</a></footer>
 		
 		</html>
 

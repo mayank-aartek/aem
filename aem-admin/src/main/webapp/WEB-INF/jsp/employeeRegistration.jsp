@@ -25,9 +25,10 @@ body, html {
     color: #373C40;
     font-family: Verdana,Arial, Helvetica, sans-serif;
     height: 100%;
-    width:100%;
+    width:99%;
     background-color: #f0f0f0;
     margin:10px;
+    
 }
 body {
     font-size: 70%;
@@ -61,12 +62,14 @@ h4 {
     text-transform:uppercase;
 }
 form.register{
-    width:800px;
+    width:90%;
 /*     margin: 20px auto 0px auto;
  */    height:500px;
     background-color:#fff;
     padding:5px;
-    margin-left:25%;
+    margin-left:9%;
+    margin-right:0%;
+    text-align: center;
  /*    -moz-border-radius:20px;
     -webkit-border-radius:20px;
  */}
@@ -104,6 +107,8 @@ form.register fieldset.row2
    /*  height:220px; */
     padding:5px;
     float:left;
+    width: 20;
+    margin-left: 350px;
 }
 form.register fieldset.row3
 {
@@ -115,6 +120,7 @@ form.register fieldset.row3
     float:left;
     margin-bottom:15px;
     width:400px;
+    
 }
 form.register fieldset.row4
 {
@@ -126,6 +132,7 @@ form.register fieldset.row4
     float:left;
     clear:both;
     width:500px;
+    margin-left: 350px;
 }
 form.register .infobox{
     float:right;

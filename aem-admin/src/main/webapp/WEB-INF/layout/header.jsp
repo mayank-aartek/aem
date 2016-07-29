@@ -10,13 +10,15 @@
 <style>
 header {
 	padding: 1em;
-	color: purple;
+	color: white;
 	background-color: gray;
 	clear: left;
 	text-align: center;
+	height: 60px;
 }
 .myh1{ font-size:28px;
-color:#563d64}
+font-weight: bold;
+color:white}
 </style>
 <body>
 <header>
