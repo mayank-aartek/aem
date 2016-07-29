@@ -63,7 +63,7 @@ h4 {
 form.register{
     width:800px;
 /*     margin: 20px auto 0px auto;
- */    height:571px;
+ */    height:500px;
     background-color:#fff;
     padding:5px;
     margin-left:25%;
@@ -268,7 +268,7 @@ p.agreement label{
     <body>    
         <f:form action="saveEmployee.do" class="register" modelAttribute="AddEmployee">
             <h1>Registration</h1>
-            <fieldset class="row1">
+            <%-- <fieldset class="row1">
                 <legend>Account Details </legend>
                 
                         <p>
@@ -286,7 +286,7 @@ p.agreement label{
                     </label>
                 </p>
             </fieldset>
-            <fieldset class="row2">
+             --%><fieldset class="row2">
                 <legend>Personal Details
                 </legend>
                 <p>
@@ -298,6 +298,12 @@ p.agreement label{
                     <label>Last Name *
                     </label>
                     <f:input path="lastName" type="text" id="lastName"/>
+                </p>
+                 <p>
+                    <label>Email *
+                    </label>
+                    <f:input path="email" type="text" id="email"/>
+                    
                 </p>
                 <p>
                     <label>Contact Number *

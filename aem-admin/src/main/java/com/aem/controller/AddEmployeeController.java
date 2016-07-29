@@ -36,8 +36,8 @@ public class AddEmployeeController {
 		
 		boolean status=addEmployeeService.save(addEmployee);
 		
-		System.out.println(status);
-		if(status==true)
+		
+		if(status==false)
 		{
 			Map<String, String> map=new HashMap<String,String>();
 			map.put("unsucessfull"," Registration fail");
@@ -48,7 +48,8 @@ public class AddEmployeeController {
 		else
 		{
 			
-			System.out.println("inside registration");
+			System.out.println("inside after save and send mail");
+			System.out.println("congratulations");
 			model.addAttribute("AddEmployee",new AddEmployee());
 			
 			return "employeeRegistration";

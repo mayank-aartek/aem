@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import com.aem.model.AddEmployee;
 import com.aem.repository.AddEmployeeRepository;
 import com.aem.service.AddEmployeeService;
+import com.aem.utill.AutoPasswordGenrator;
+import com.aem.utill.SendMail;
 
 @Service
 public class AddEmployeeServiceimpl implements AddEmployeeService {
@@ -16,15 +18,20 @@ public class AddEmployeeServiceimpl implements AddEmployeeService {
 	private AddEmployeeRepository addEmployeeRepository;
 	
 	
+	
 	public boolean save(AddEmployee addEmployee) {
+		String password=AutoPasswordGenrator.createPassword();
+		addEmployee.setPassword(password);
 		
 		System.out.println("inside before service");
 		AddEmployee addEmp=null;
 		addEmp =  addEmployeeRepository.save(addEmployee);
-		System.out.println(addEmp.getAddress());
 		System.out.println("after service method");
-		System.out.println(addEmp.getId());
-		return false;
+		
+		System.out.println(addEmp.getId()+"  "+addEmp.getPassword());
+		boolean status=SendMail.sendmail(addEmployee);
+		
+		return status;
 	
 		
 	}
