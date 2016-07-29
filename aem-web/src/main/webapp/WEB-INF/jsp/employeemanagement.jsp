@@ -10,7 +10,12 @@
     <meta charset="UTF-8">
     <title>Resource Management System</title>
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-    <spring:url value="/resources/js/paging.js" var="pagingjs" /> 
+  
+ 
+  <!-- Load jQuery JS for dynamic row in maintence table -->
+  <spring:url value="/resources/js/dynamicRow.js" var="addNewRow" />  
+  <script src="${addNewRow}"></script>
+
     <!-- Load jQuery JS -->
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <!-- Load jQuery UI Main JS  -->
@@ -30,7 +35,7 @@
 </script>
     <script>
     function Pager(tableName, itemsPerPage) {
-  alert("hi");
+  
 	this.tableName = tableName;
     this.itemsPerPage = itemsPerPage;
     this.currentPage = 1;
@@ -100,6 +105,45 @@
     }
 }
     </script>
+	
+	
+	<!-- popup script -->
+	
+	<script type="text/javascript">
+	
+	$(document).ready( function() {
+	
+		// When site loaded, load the Popupbox First
+		/*loadPopupBox();*/
+		
+		$('#popupBoxClose').click( function() {	// TO Unload the Popupbox
+			$('#popup_box').fadeOut("slow");
+			$("#container").css({ // this is just for style		
+				"opacity": "1"  
+			}); 
+		});	
+		
+		$('.popupBtn').click(function() {	// To Load the Popupbox
+		
+			$('#popup_box').fadeIn("slow");
+			$("#container").css({ // this is just for style
+				"opacity": "0.3"
+			}); 		
+		});
+		
+		
+		$('#submitDesc').click(function() {	// To Load the Popupbox
+		
+		 	var task =document.getElementById('taskDesc');
+			$('#popup_box').fadeOut("slow");
+			$("#container").css({ // this is just for style		
+				"opacity": "1" });
+			alert("Form Submitted Successfully..."+task.value);
+		});
+		
+		/**********************************************************/		
+	});
+</script>
     
     
         <style>
@@ -116,7 +160,7 @@ html, body {
  
   margin-left:100px;
   margin-top:50px; 
-   
+  margin-bottom:150px;   
 }
 
 body {
@@ -140,15 +184,18 @@ main {
   min-width: 320px;
   max-width: 900px;
   padding: 100px;
-  margin: 0 auto;
+  margin-bottom: 100px;
   background: #fff;
-  border:
+ 
+  padding-bottom:100px;
 }
 
 section {
   display: none;
   padding: 20px 0 0;
   border-top: 1px solid #ddd;
+
+  overflow-y:hidden;
 }
 
 input.t {
@@ -233,7 +280,7 @@ overflow: scroll;
 }
 .responstable {
   margin: 2em 0;
-  width: auto;
+  width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
   background: #FFF;
@@ -344,12 +391,6 @@ th
 
 }
 
-
-
-
-
-
-
 #results{
 margin: 2em 0;
   width: 100%;
@@ -360,6 +401,58 @@ margin: 2em 0;
   border: 1px solid #167F92;
   font-family:times new roman;
 }
+
+
+
+
+
+/* popup_box DIV-Styles*/
+#popup_box { 
+	display:none; /* Hide the DIV */
+	position:fixed;  
+	_position:absolute; /* hack for internet explorer 6 */  
+	height:200px;  
+	width:300px;  
+	background:#FFFFFF;  
+	left: 300px;
+	top: 150px;
+	z-index:100; /* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
+	margin-left: 15px;  
+	
+	/* additional features, can be omitted */
+	border:2px solid #ff0000;  	
+	padding:15px;  
+	font-size:15px;  
+	-moz-box-shadow: 0 0 5px #ff0000;
+	-webkit-box-shadow: 0 0 5px #ff0000;
+	box-shadow: 0 0 5px #ff0000;
+	
+}
+
+#container {
+	background: #d2d2d2; /*Sample*/
+	width:100%;
+	height:100%;
+}
+
+a{  
+cursor: pointer;  
+text-decoration:none;  
+} 
+
+/* This is for the positioning of the Close Link */
+#popupBoxClose {
+	font-size:20px;  
+	line-height:15px;  
+	right:5px;  
+	top:5px;  
+	position:absolute;  
+	color:#6fa5e2;  
+	font-weight:500;  	
+
+
+
+
 
     </style>
 
@@ -443,6 +536,40 @@ Select Month <input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#">View
  pager.showPageNav('pager', 'pageNavPosition'); 
  pager.showPage(1);
     </script>
+    
+    
+    <script type="text/javascript">
+    
+    $(document).ready(function(){
+    	var i=0;
+    	$("#addnew").click(function(){
+    	 alert(1);
+
+    	 var table = document.getElementById("myTable");
+    	    var row = table.insertRow(4);
+    	 row.id=i;
+    	 
+    	    var cell1 = row.insertCell(0);
+    	    var cell2 = row.insertCell(1);
+    	 var cell3 = row.insertCell(2);
+    	  var cell4 = row.insertCell(3);
+    	   var cell5 = row.insertCell(4);
+    	 var cell6 = row.insertCell(5);
+    	  var cell7 = row.insertCell(6);
+    	    
+
+    	 cell5.innerHTML = "<input type='text' style='width:30px'/><button class='popupBtn'  type='button' >ADD</button> ";
+    	 
+    	
+    	 alert(row.id);
+    	i++; 
+    	});}); 
+    
+    
+    </script>
+    
+    
+    
 </body>
 
 
@@ -458,65 +585,64 @@ Select Month <input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#">View
 <body>
 <form >
 <div id="tab">
-<table class="responstable">
+<table id="myTable" class="responstable">
 <tr colspan="5">Start Date<input type="text" class="datepicker" /> End Date
-<input type="text" class="datepicker" />&nbsp;&nbsp;<a href="#">Add new</a></tr>
+<input type="text" class="datepicker" />&nbsp;&nbsp;<button id="addnew" type="button" >ADD NEW</button></tr>
  <div style="font-size:10px;">
   <tr>
-    <th rowspan="3">Status</th>
-    <th rowspan="3">Project</th>
-    <th rowspan="3">Activity</th>
-    <th rowspan="3">Module/Ticket No.</th>
-    <th colspan="6" style="font-size:15px;">Week</th>
+    <th rowspan="2">Status</th>
+    <th rowspan="2">Project</th>
+    <th rowspan="2">Activity</th>
+    <th rowspan="2">Module/Ticket No.</th>
+    <th colspan="3" style="font-size:15px;">MONDay</th>
   </tr>
   
   <tr style="font-size:10px;">
-   <th>Monday</th>
-   <th>Tuesday</th>
-   <th>Wednesday</th>
-   <th>Thursday</th>
-   <th>Friday</th> 
-   <th>Saturday</th>
+   <th><input type="text" name="date"></th>
+   <th>Total Hours</th>
+   <th>Total Weekly Hours</th>
+  
   </tr>
   
-  <tr  style="font-size:10px;">
-   <th> Date  </th>
-   <th> Date  </th>
-   <th> Date  </th>
-   <th> Date  </th>
-   <th> Date  </th> 
-   <th> Date </th>
-  </tr>
+  
 </div>
   <tr>
-   <td></td>
+   <td ></td>
    <td><select><option>select<option></select></td>
    <td><select><option>select<option></select></td>
    <td><input type="text" /></td>
-   <td><input type="text" style="width:68px"/></td>
-   <td><input type="text" style="width:68px"/></td>
-   <td><input type="text" style="width:68px"/></td>
-   <td><input type="text" style="width:68px"/></td>
-   <td><input type="text" style="width:68px"/></td> 
-   <td><input type="text" style="width:68px"/></td>
+   <td><input type="text" style="width:35px"/><button class="popupBtn"  type="button" >ADD</button></td>   
+   <td><input type="text" style="width:35px"/></td>
+   <td><input type="text" style="width:35px"/></td>
+  
   </tr>
- 
+  <tr>
+  <td colspan="4"></td>  
+  <td><input type="text" style="width:35px"/><button class="popupBtn"  type="button" >ADD</button></td>  
+  </tr>
+  
+  <tr>
+  <td colspan="4"></td>  
+  <td><input type="text" style="width:35px"/><button class="popupBtn"  type="button" >ADD</button></td>  
+  </tr>
+  
+  <tr>
+  <td colspan="4"></td>  
+  <td><input type="text" style="width:35px"/><button class="popupBtn"  type="button" >ADD</button></td>  
+  </tr>
+
+  
   
  
  
   <tr style="background:rgb(234,243,243)"> 
    <td colspan="4">Hours</td> 
-   <td><input type="text" style="width:68px"/></td>
-   <td><input type="text" style="width:68px"/></td>
-   <td><input type="text" style="width:68px"/></td>
-   <td><input type="text" style="width:68px"/></td>
-   <td><input type="text" style="width:68px"/></td> 
-   <td><input type="text" style="width:68px"/></td>
+   
   </tr>
   
   <tr>
    <td colspan="4">Total Weekly hours</td> 
-   <td style="text-align:right" colspan="6">  <input type="text" style="width:68px" /></td>
+ 
   </tr>
  
   
@@ -525,6 +651,16 @@ Select Month <input type="text" style="width:68px"/>&nbsp;&nbsp;<a href="#">View
 <p align="center"><input type="button" value="Save"/>
 <input type="button" value="Send for Approval"/>
 </p>
+
+
+<div id="popup_box">	<!-- OUR PopupBox DIV-->
+	
+	<textarea id="taskDesc" placeholder="write Discription" style="width:100%; height:50%; margin-top:10px; "> </textarea>
+	<a id="popupBoxClose">Close</a>	
+	<button id="submitDesc"  type="button" >Submit</button>
+	
+</div>
+
 </form >
 
   
