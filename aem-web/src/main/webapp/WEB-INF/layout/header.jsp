@@ -9,7 +9,7 @@
 
 .headerBox
 {
-background-color:#00349a;
+background-color:#ff9900;
 max-width:80%;
 height: 97px;
 position: absolute;
@@ -20,7 +20,7 @@ float: right;
 }
 .dropbtn {
 /* background:url(resources/images/images.png) no-repeat;
- */    background-color: #00349a;
+ */    background-color: #ff9900;
     color: white;
     height: 10px;
     padding: 10px;
@@ -38,7 +38,7 @@ float: right;
     display: none;
     position: absolute;
     right: 0;
-    background-color: #f9f9f9;
+    background-color: #ff9900;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }

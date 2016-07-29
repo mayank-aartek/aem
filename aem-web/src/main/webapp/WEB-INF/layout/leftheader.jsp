@@ -27,7 +27,7 @@ text-align: center;
 
 .mainmenu a {
   display: block;
-  background-color: #00349a;
+  background-color: #ff6666;
   text-decoration: none;
   padding: 10px;
   color:black;
@@ -35,11 +35,11 @@ text-align: center;
 }
 
 .mainmenu a:hover {
-    background-color: white; /*  #cc7a00 */
+    background-color:#ff6666; /*  #cc7a00 */
 }
 
 .mainmenu.submenu{
-background-color:#00349a;
+background-color:#ff6666;
 
 }
 
@@ -55,12 +55,12 @@ background-color:#00349a;
 */
 
 .submenu a {
-  background-color:#1a53ff;    
+  background-color:#ff6666;    
 }
 
 /* hover behaviour for links inside .submenu */
 .submenu a:hover {
-  background-color:white;
+  background-color:#ff6666;
 }
 
 /* this is the initial state of all submenus.
@@ -81,7 +81,7 @@ position:absolute;
 top:0;
 left:0;
 height: 100%;
-background-color: #00349a;
+background-color: #ff6666;
 
 }
 
@@ -101,7 +101,7 @@ font-size:120%;
 
 }
 #photo{
-background-color: #f2f2f2;
+background-color: #ffcc99;
 border-radius:50%;
 
 }
@@ -113,7 +113,7 @@ height:100%;
 }
 
 #logo{
-background-color:white;
+background-color:#ff9900;
 width:100%;
 height:97px;
 }
