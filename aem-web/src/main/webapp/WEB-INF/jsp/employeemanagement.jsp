@@ -182,9 +182,12 @@ p {
 
 main {
   min-width: 320px;
-  max-width: 900px;
+  max-width: 1002px;
+  max-height: 1200px;
   padding: 100px;
   margin-bottom: 100px;
+  margin-top: -76px;
+  margin-left: 103px;
   background: #fff;
  
   padding-bottom:100px;
@@ -276,7 +279,9 @@ input:checked + label {
 
 #tab{
 
-overflow: scroll;
+height: 471px;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 .responstable {
   margin: 2em 0;

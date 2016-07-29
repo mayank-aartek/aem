@@ -15,6 +15,7 @@ margin-top:0px;
 text-align: center; 
  font-size: 130%;
  color:black;
+ hight:100%;
 
 }
 
@@ -31,6 +32,7 @@ text-align: center;
   text-decoration: none;
   padding: 10px;
   color:black;
+  hight:100%;
   
 }
 
