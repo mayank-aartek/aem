@@ -127,7 +127,7 @@ height:97px;
 <div id="logo"><img style="height: 100%; width: 100%;" src="resources/images/logo.png"></div>
 
 
-<div class="photoBox"><img id="photo" src="resources/images/icon-single-person.gif" style="width:45%; height:27%"><label id="name">Software Devloper</label></div>
+<div class="photoBox"><img id="photo" src="resources/images/user logo.png" style="width:45%; height:27%"><label id="name">Software Devloper</label></div>
 
 <ul class="mainmenu">
     <li><a href="">Home</a></li>
