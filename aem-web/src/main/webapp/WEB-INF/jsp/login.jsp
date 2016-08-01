@@ -63,7 +63,7 @@ h1{
   background:white;
   width:300px;
   border-radius:6px;
-  margin: 0 auto 0 auto;
+  margin: 82px auto 0;;
   padding:0px 0px 70px 0px;
   border: #2980b9 4px solid; 
 }
@@ -143,7 +143,7 @@ background:#3594D2;
   
 <!-- <a href="http://localhost:8080/aem-web-0.0.1-SNAPSHOT/login"><div class="btn"> Sign In</div></a> End Btn -->
 
-<a href="#"><div id="btn2">Sign Up</div></a> <!-- End Btn2 -->
+<!-- <a href="#"><div id="btn2">Sign Up</div></a> --> <!-- End Btn2 -->
 
 <input type="submit" value="Sign In">
   
