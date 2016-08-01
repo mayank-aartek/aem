@@ -198,12 +198,25 @@ p {
 }
 
 main {
+<<<<<<< HEAD
 	min-width: 320px;
 	max-width: 900px;
 	padding: 100px;
 	margin-bottom: 100px;
 	background: #fff;
 	padding-bottom: 100px;
+=======
+  min-width: 320px;
+  max-width: 1002px;
+  max-height: 1200px;
+  padding: 100px;
+  margin-bottom: 100px;
+  margin-top: -76px;
+  margin-left: 103px;
+  background: #fff;
+ 
+  padding-bottom:100px;
+>>>>>>> ebcd4c5a342c743824d1f34c2fc5a9447c1be255
 }
 
 section {
@@ -284,6 +297,17 @@ input:checked+label {
 
 #tab {
 	overflow: scroll;
+=======
+
+
+
+
+
+#tab{
+
+height: 471px;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .responstable {
