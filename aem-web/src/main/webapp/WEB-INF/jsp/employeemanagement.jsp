@@ -118,6 +118,22 @@
 		// When site loaded, load the Popupbox First
 		/*loadPopupBox();*/
 		
+		var strhour=new String();
+		var strDesc=new String();
+		
+		
+		$('.workinghour').keyup( function() {	// append taskHour 
+			var workHour=$(this).val();
+			$('#taskhour').append(" "+workHour);
+			
+			strhour=strhour.concat(workHour+" "); 
+			//$('#hours').value
+			//alert("str "+strhour);
+			$('#hours').val(strhour);
+			//alert($('#hours').val());
+			
+		});
+		
 		$('#popupBoxClose').click( function() {	// TO Unload the Popupbox
 			$('#popup_box').fadeOut("slow");
 			$("#container").css({ // this is just for style		
@@ -139,20 +155,23 @@
 		$('#submitDesc').click(function() {	// To Load the Popupbox
 		
 		 	//var task =document.getElementById('taskDesc');
-		var task=$('#taskDesc').val();
-		$('#taskvar').append(" "+task);
-		$('#taskDesc').val('');
+		var task=$('#taskDesc').val();		
+		//$('#taskvar').append("_"+task);		
+		//$('#taskDesc').val('');
+		strDesc=strDesc.concat(task+"_");
+		$('#taskDesc1').val(strDesc);
+		
 			$('#popup_box').fadeOut("slow");
 			$("#container").css({ // this is just for style		
 				"opacity": "1" });
 			//$('#taskDesc').html('');
 			//task +=task.value;
-        //$('#taskvar').append(task);
-			alert("Form Submitted Successfully..."+task);
+        //$('#taskvar').append(task);        
+			alert("Form Submitted Successfully..."+$('#taskDesc1').val());
 			
 		
 		});
-		//$('#taskvar').append(task);
+		
 		
 		/**********************************************************/		
 	});
@@ -198,25 +217,15 @@ p {
 }
 
 main {
-<<<<<<< HEAD
 	min-width: 320px;
-	max-width: 900px;
+	max-width: 1002px;
+	max-height: 1200px;
 	padding: 100px;
 	margin-bottom: 100px;
+	margin-top: -76px;
+	margin-left: 103px;
 	background: #fff;
 	padding-bottom: 100px;
-=======
-  min-width: 320px;
-  max-width: 1002px;
-  max-height: 1200px;
-  padding: 100px;
-  margin-bottom: 100px;
-  margin-top: -76px;
-  margin-left: 103px;
-  background: #fff;
- 
-  padding-bottom:100px;
->>>>>>> ebcd4c5a342c743824d1f34c2fc5a9447c1be255
 }
 
 section {
@@ -296,18 +305,9 @@ input:checked+label {
 }
 
 #tab {
-	overflow: scroll;
-=======
-
-
-
-
-
-#tab{
-
-height: 471px;
-    overflow-x: hidden;
-    overflow-y: scroll;
+	height: 471px;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 .responstable {
@@ -620,7 +620,8 @@ a {
 							<th rowspan="2">Project</th>
 							<th rowspan="2">Activity</th>
 							<th rowspan="2">Module/Ticket No.</th>
-							<th colspan="3" name="day" value="monday" style="font-size: 15px;">MONDay</th>
+							<th colspan="3" name="day" value="monday"
+								style="font-size: 15px;">MONDay</th>
 						</tr>
 
 						<tr style="font-size: 10px;">
@@ -639,14 +640,18 @@ a {
 						<td><select><option>select
 								<option></select></td>
 						<td><input type="text" /></td>
-						<td><input type="text" style="width: 35px" name="hour" />
-						<button class="popupBtn" type="button" name="task">ADD</button></td>
-						<td><input type="text" style="width: 35px" />
-						<button class="popupBtn" type="button">ADD</button></td>
-						<td><input type="text" style="width: 35px" />
-						<button class="popupBtn" type="button">ADD</button></td>
-							<td><input type="text" style="width: 35px" />
-						<button class="popupBtn" type="button">ADD</button></td>
+						<td><input type="text" style="width: 35px" name="hour"
+							class="workinghour" />
+							<button class="popupBtn" type="button" name="task">ADD</button></td>
+						<td><input type="text" style="width: 35px"
+							class="workinghour" />
+							<button class="popupBtn" type="button">ADD</button></td>
+						<td><input type="text" style="width: 35px"
+							class="workinghour" />
+							<button class="popupBtn" type="button">ADD</button></td>
+						<td><input type="text" style="width: 35px"
+							class="workinghour" />
+							<button class="popupBtn" type="button">ADD</button></td>
 						<td><input type="text" style="width: 35px" /></td>
 						<td><input type="text" style="width: 35px" /></td>
 
@@ -674,16 +679,26 @@ a {
 			<div id="popup_box">
 				<!-- OUR PopupBox DIV-->
 
-				<textarea id="taskDesc" name="taskpop" placeholder="write Discription"
+				<textarea id="taskDesc" name="taskpop"
+					placeholder="write Discription"
 					style="width: 100%; height: 50%; margin-top: 10px;"> </textarea>
 				<a id="popupBoxClose">Close</a>
 				<button id="submitDesc" type="button">Submit</button>
 
 			</div>
+
+			<input type="hidden" id="taskDesc1"  name="taskDesc"/>
+			<input type="hidden" id="hours"  name="hours"/>
 			
+			
+			
+
 		</form>
 
-<span id="taskvar"></span>
+
+
+		<span id="taskvar"></span>
+		<span id="taskhour"></span>
 
 	</body>
 	</section> </main>
