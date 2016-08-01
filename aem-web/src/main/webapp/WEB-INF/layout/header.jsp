@@ -66,9 +66,9 @@ float: right;
 <div class="headerBox" style="text-align: center;font-size:200%;">
 <label style="position:relative;top:20%;color:white;text-decoration:none;">Aartek Employee Management</label>
 </div>
-<div class="dropdown" style="float:right;">
- <img src="resources/images/icon-single-person.gif" width="60" height="50">
-  <button class="dropbtn"><img src="resources/images/images.png" width="20" height="20"></button>
+<div class="dropdown" style="float:right; ">
+ <img src="resources/images/user logo.png"  width="60" height="50" style="margin-right: 3px;  border-radius: 100%;><label id="name">Software Devloper</label>
+  <!-- <button class="dropbtn"><img src="resources/images/images.png" width="20" height="20"></button> -->
   <!-- <img src="resources/images/images.png" width="30" height="30"> -->
   
   <div class="dropdown-content">
