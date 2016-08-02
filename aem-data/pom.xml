@@ -11,8 +11,8 @@
 	<properties>
 	
 		<mysql.version>5.1.31</mysql.version>
-<quartz.version>2.2.1</quartz.version>
-
+		<quartz.version>2.2.1</quartz.version>
+		<spring.security.version>3.2.3.RELEASE</spring.security.version>
 	</properties>
 
 
@@ -199,7 +199,24 @@
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz</artifactId>
             <version>${quartz.version}</version>
-        </dependency>		
+        </dependency>
+        
+        <dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+        <dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>		
 	</dependencies>
 
 </project>
