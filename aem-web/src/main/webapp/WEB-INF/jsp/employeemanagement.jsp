@@ -509,7 +509,7 @@ a {
 						<input type="text" style="width: 68px" />
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select Month
 						<input type="text" style="width: 68px" />&nbsp;&nbsp;
-						<a href="#">View Timesheet</a> &nbsp;&nbsp;
+						<a href="/timesheet">View Timesheet</a> &nbsp;&nbsp;
 						<a href="#">Add Current/Past Week's Timesheet</a>
 					</tr>
 
@@ -582,7 +582,7 @@ a {
     	  var cell7 = row.insertCell(6);
     	    
 
-    	 cell5.innerHTML = "<input type='text' style='width:30px'/><button class='popupBtn'  type='button' >ADD</button> ";
+    	 cell5.innerHTML = "<input type='text' style='width:100px'/><button class='popupBtn'  type='button' >ADD</button> ";
     	 
     	
     	 alert(row.id);
