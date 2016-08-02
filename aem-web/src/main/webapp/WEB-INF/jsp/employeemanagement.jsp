@@ -57,7 +57,7 @@
     
     this.showPage = function(pageNumber) {
     	if (! this.inited) {
-    		alert("not inited");
+    	//	alert("not inited");
     		return;
     	}
 
@@ -93,7 +93,7 @@
 
     this.showPageNav = function(pagerName, positionId) {
     	if (! this.inited) {
-    		alert("not inited");
+    		//alert("not inited");
     		return;
     	}
     	var element = document.getElementById(positionId);
@@ -116,7 +116,7 @@
 var strhour=new String();
 var strDesc=new String();
 
-function myyFun(){
+function taskdescription(){
 	  
 	  //alert("hello");
 	  
@@ -132,7 +132,7 @@ function workhour(hours){
 	  
 	 // alert("hour");
 	  var workHour=hours;
-	  alert(workHour);
+	  //alert(workHour);
 		$('#taskhour').append(" "+workHour);
 		
 		strhour=strhour.concat(workHour+" "); 
@@ -198,7 +198,7 @@ function workhour(hours){
 			//$('#taskDesc').html('');
 			//task +=task.value;
         //$('#taskvar').append(task);        
-			alert("Form Submitted Successfully..."+$('#taskDesc1').val());
+		//	alert("Form Submitted Successfully..."+$('#taskDesc1').val());
 			
 		
 		});
@@ -598,7 +598,7 @@ a {
     $(document).ready(function(){
     	var i=0;
     	$("#addnew").click(function(){
-    	 alert(1);
+    	// alert(1);
 
     	 var table = document.getElementById("myTable");
     	    var row = table.insertRow(4);
@@ -609,15 +609,14 @@ a {
     	 var cell3 = row.insertCell(2);
     	  var cell4 = row.insertCell(3);
     	   var cell5 = row.insertCell(4);
-    	 var cell6 = row.insertCell(5);
-    	  var cell7 = row.insertCell(6);
+    	
     	    cell2.innerHTML="<select><option>select</option></select>";
     	    cell3.innerHTML="<select><option>select</option></select>";
     	    cell4.innerHTML="<input type='text'/>"
-    	 cell5.innerHTML = "<input type='text' style='width:30px'  class='workinghour' onKeyup='workhour(this.value)'/><button  type='button' onClick='myyFun()' >ADD</button> ";
+    	 cell5.innerHTML = "<input type='text' style='width:30px'  class='workinghour' onKeyup='workhour(this.value)'/><button  type='button' onClick='taskdescription()' >ADD</button> ";
     	 
     	
-    	 alert(row.id);
+    	// alert(row.id);
     	i++; 
     	});}); 
     
@@ -658,9 +657,9 @@ a {
 
 						<tr style="font-size: 10px;">
 							<th><input type="text" name="date"></th>
-							<th>Total Hours</th>
+							<!-- <th>Total Hours</th>
 							<th>Total Weekly Hours</th>
-
+ -->
 						</tr>
 
 
@@ -675,8 +674,8 @@ a {
 						<td><input type="text" style="width: 35px" name="hour"
 							class="workinghour" />
 							<button class="popupBtn" type="button" name="task">ADD</button></td>
-						<td><input type="text" style="width: 35px" /></td>
-						<td><input type="text" style="width: 35px" /></td>
+
+
 
 
 
@@ -684,12 +683,13 @@ a {
 
 					<tr style="background: rgb(234, 243, 243)">
 						<td colspan="4">Hours</td>
+						<td><input type="text" style="width: 35px" /></td>
 
 					</tr>
 
 					<tr>
 						<td colspan="4">Total Weekly hours</td>
-
+						<td><input type="text" style="width: 35px" /></td>
 					</tr>
 
 

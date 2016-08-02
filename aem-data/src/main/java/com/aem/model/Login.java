@@ -33,8 +33,8 @@ public class Login implements Serializable {
 	private String newPassword;
 	@Transient
 	private String confirmPassword;
-	@Fetch(value =FetchMode.JOIN)
-	@OneToMany(fetch = FetchType.LAZY, targetEntity = TaskManagement.class, cascade = CascadeType.ALL)
+	@Fetch(value = FetchMode.SUBSELECT)
+	@OneToMany(fetch = FetchType.EAGER, targetEntity = TaskManagement.class, cascade = CascadeType.ALL)
 	@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")
 	List<TaskManagement> taskManagement;
 
