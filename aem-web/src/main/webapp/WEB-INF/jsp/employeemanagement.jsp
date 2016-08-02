@@ -539,7 +539,7 @@ a {
 						<input type="text" style="width: 68px" />
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select Month
 						<input type="text" style="width: 68px" />&nbsp;&nbsp;
-						<a href="#">View Timesheet</a> &nbsp;&nbsp;
+						<a href="/timesheet">View Timesheet</a> &nbsp;&nbsp;
 						<a href="#">Add Current/Past Week's Timesheet</a>
 					</tr>
 
@@ -595,6 +595,7 @@ a {
 <script type="text/javascript">
     
     $(document).ready(function(){
+
      var i=0;
      $("#addnew").click(function(){
       alert(1);
@@ -619,6 +620,31 @@ a {
       alert(row.id);
      i++; 
      });}); 
+
+    	var i=0;
+    	$("#addnew").click(function(){
+    	 alert(1);
+
+    	 var table = document.getElementById("myTable");
+    	    var row = table.insertRow(4);
+    	 row.id=i;
+    	 
+    	    var cell1 = row.insertCell(0);
+    	    var cell2 = row.insertCell(1);
+    	 var cell3 = row.insertCell(2);
+    	  var cell4 = row.insertCell(3);
+    	   var cell5 = row.insertCell(4);
+    	 var cell6 = row.insertCell(5);
+    	  var cell7 = row.insertCell(6);
+    	    
+
+    	 cell5.innerHTML = "<input type='text' style='width:100px'/><button class='popupBtn'  type='button' >ADD</button> ";
+    	 
+    	
+    	 alert(row.id);
+    	i++; 
+    	});}); 
+
     
     
     </script>
