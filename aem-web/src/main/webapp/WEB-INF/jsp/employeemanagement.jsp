@@ -509,7 +509,7 @@ a {
 						<input type="text" style="width: 68px" />
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select Month
 						<input type="text" style="width: 68px" />&nbsp;&nbsp;
-						<a href="/timesheet">View Timesheet</a> &nbsp;&nbsp;
+						<a href="timesheet">View Timesheet</a> &nbsp;&nbsp;
 						<a href="#">Add Current/Past Week's Timesheet</a>
 					</tr>
 
