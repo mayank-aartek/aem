@@ -112,14 +112,45 @@
 <!-- popup script -->
 
 <script type="text/javascript">
+
+var strhour=new String();
+var strDesc=new String();
+
+function myyFun(){
+	  
+	  //alert("hello");
+	  
+		$('#popup_box').fadeIn("slow");
+		$("#container").css({ // this is just for style
+			"opacity": "0.3"
+		}); 
+}
+
+
+
+function workhour(hours){
+	  
+	 // alert("hour");
+	  var workHour=hours;
+	  alert(workHour);
+		$('#taskhour').append(" "+workHour);
+		
+		strhour=strhour.concat(workHour+" "); 
+		//$('#hours').value
+		//alert("str "+strhour);
+		$('#hours').val(strhour);
+		//alert($('#hours').val());
+	  
+}
+
 	
-	$(document).ready( function() {
-	
+	$(document).ready( function() {		
+			
 		// When site loaded, load the Popupbox First
 		/*loadPopupBox();*/
 		
-		var strhour=new String();
-		var strDesc=new String();
+		//var strhour=new String();
+		//var strDesc=new String();
 		
 		
 		$('.workinghour').keyup( function() {	// append taskHour 
@@ -580,9 +611,10 @@ a {
     	   var cell5 = row.insertCell(4);
     	 var cell6 = row.insertCell(5);
     	  var cell7 = row.insertCell(6);
-    	    
-
-    	 cell5.innerHTML = "<input type='text' style='width:100px'/><button class='popupBtn'  type='button' >ADD</button> ";
+    	    cell2.innerHTML="<select><option>select</option></select>";
+    	    cell3.innerHTML="<select><option>select</option></select>";
+    	    cell4.innerHTML="<input type='text'/>"
+    	 cell5.innerHTML = "<input type='text' style='width:30px'  class='workinghour' onKeyup='workhour(this.value)'/><button  type='button' onClick='myyFun()' >ADD</button> ";
     	 
     	
     	 alert(row.id);
@@ -643,17 +675,10 @@ a {
 						<td><input type="text" style="width: 35px" name="hour"
 							class="workinghour" />
 							<button class="popupBtn" type="button" name="task">ADD</button></td>
-						<td><input type="text" style="width: 35px"
-							class="workinghour" />
-							<button class="popupBtn" type="button">ADD</button></td>
-						<td><input type="text" style="width: 35px"
-							class="workinghour" />
-							<button class="popupBtn" type="button">ADD</button></td>
-						<td><input type="text" style="width: 35px"
-							class="workinghour" />
-							<button class="popupBtn" type="button">ADD</button></td>
 						<td><input type="text" style="width: 35px" /></td>
 						<td><input type="text" style="width: 35px" /></td>
+
+
 
 					</tr>
 
@@ -687,11 +712,11 @@ a {
 
 			</div>
 
-			<input type="hidden" id="taskDesc1"  name="taskDesc"/>
-			<input type="hidden" id="hours"  name="hours"/>
-			
-			
-			
+			<input type="hidden" id="taskDesc1" name="taskDesc" /> <input
+				type="hidden" id="hours" name="hours" />
+
+
+
 
 		</form>
 
