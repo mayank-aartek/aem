@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity
 public class Login implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -30,8 +33,8 @@ public class Login implements Serializable {
 	private String newPassword;
 	@Transient
 	private String confirmPassword;
-
-	@OneToMany(fetch = FetchType.LAZY, targetEntity = TaskManagement.class, cascade = CascadeType.ALL)
+	@Fetch(value =FetchMode.JOIN)
+	@OneToMany(targetEntity = TaskManagement.class, cascade = CascadeType.ALL)
 	@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "ID")
 	List<TaskManagement> taskManagement;
 
