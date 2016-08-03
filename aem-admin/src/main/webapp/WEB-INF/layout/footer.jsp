@@ -21,7 +21,7 @@
 }
 		</style>
 		
-		<footer><a href="http://aartek.co.in/">&copyAartek software solutions 2016</a></footer>
+		<footer style="padding-top: 20px; border-top-width: 0px; margin-top: -5px; width: 1380px; height: 23px; padding-bottom: 20px; border-left-width: 0px; margin-left: 0px;"><a href="http://aartek.co.in/">&copyAartek software solutions 2016</a></footer>
 		
 		</html>
 
