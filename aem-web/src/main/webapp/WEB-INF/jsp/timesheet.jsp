@@ -365,6 +365,7 @@ body {
 <table class="responstable">
 
 
+
   <tr>
     
     <th rowspan="3">Project Name</th>
@@ -372,7 +373,7 @@ body {
     <th rowspan="3">Total Hours</th>
   
   </tr>
-  
+  <tr><tr>
   <c:forEach items="${Timesheetlist}" var="tsl">
   <tr>
  <td><c:out value="${tsl.projectName}"></c:out></td>
@@ -380,7 +381,7 @@ body {
 <td><c:out value="${tsl.totalHours}"></c:out></td>
 </tr>
 </c:forEach>
-
+</tr></tr>
  
   
   
