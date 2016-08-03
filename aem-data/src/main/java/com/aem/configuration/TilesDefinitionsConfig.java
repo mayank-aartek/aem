@@ -52,7 +52,8 @@ public class TilesDefinitionsConfig implements DefinitionsFactory{
 	    addDefaultLayoutDef("welcomePage", "welcomePage", "/WEB-INF/layout/leftheader.jsp","/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 	    addDefaultLayoutDef("profile", "profile", "/WEB-INF/layout/leftheader.jsp","/WEB-INF/layout/header.jsp", "/WEB-INF/layout/footer.jsp");
 	    addDefaultLayoutDef("mail", "sendmail", "","", "");
-		
+	    addDefaultLayoutDef("timesheet", "timesheet", "","", "");
+
 		
 	}
 	
