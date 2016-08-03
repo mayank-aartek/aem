@@ -13,6 +13,16 @@ public interface AdminLoginRepository extends JpaRepository<Login, Integer> {
 
 	@Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.SUPPORTS)
 	 Login findByEmail(String email);
+	
+	/*@Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.SUPPORTS)
+	Login findByEmailAndPassword(String email, String encrypted);
+
+	@Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.SUPPORTS)
+	Login findByIdAndPassword(Integer id, String encriptedPassword);
+	
+	@Transactional(isolation = Isolation.READ_COMMITTED, propagation = Propagation.SUPPORTS)
+	Login findByEmailAndIsDeleted(String username, int zero);
+*/
 }
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" style="margin: 0px; padding-top: 0px; bottom: 8px; left: -100px;">
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -27,8 +27,18 @@ body, html {
     height: 100%;
     width:99%;
     background-color: #f0f0f0;
-    margin:10px;
-    
+    margin:10px;    
+border: 40px;
+padding: 50px;
+position:absolute;
+}
+img{
+border:70px;
+margin:10px;
+padding:10px;
+top:150px;
+left:160px;
+width:120px;
 }
 body {
     font-size: 70%;
@@ -268,32 +278,26 @@ p.agreement label{
 </style>
 
  
- 
+ <script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+  };
+</script>
  
  
    </head>
-    <body>    
-        <f:form action="saveEmployee.do" class="register" modelAttribute="AddEmployee">
+    <body style="left: 50px; margin-left: 7px; height:803px; border-left-width: 0px; padding-left: 46px; width: 1419px;">    
+        <f:form action="saveEmployee.do" class="register" modelAttribute="AddEmployee" style="margin-left: 191px; border-left-width: 39px; padding-left: 5px; width: 1282px; height: 639px; border-right-width: 25px; margin-right: 0px; margin-bottom: -60px; border-bottom-width: 0px;">
             <h1>Registration</h1>
-            <%-- <fieldset class="row1">
-                <legend>Account Details </legend>
-                
-                        <p>
-                    <label>Email *
-                    </label>
-                    <f:input path="email" type="text" id="email"/>
-                    
-                </p>
-                <p>
-                    <label>Password*
-                    </label>
-                    <f:input path="password" type="text" id="password"/>
-                   
-                    <label class="obinfo">* obligatory fields
-                    </label>
-                </p>
-            </fieldset>
-             --%><fieldset class="row2">
+            <fieldset class="row2" style="margin-left: 206px; margin-right: 53px; height: 394px; width: 336px; border-left-width: 1px; padding-left: 5px; border-top-width: 7px; padding-top: 0px; padding-bottom: 1px; margin-top: -5px;">
+             
+             <div  style="margin-left: -175px; padding-left: 0px; border-left-width: 0px; width: 145px; height: 2px; padding-top: 0px;">
+             <input type="file" accept="image/*" onchange="loadFile(event)">
+<img id="output" size:10% />
+             </div>
+             
+             
                 <legend>Personal Details
                 </legend>
                 <p>
@@ -420,7 +424,7 @@ p.agreement label{
                 </p>
                
             </fieldset>
-            <fieldset class="row4">
+            <fieldset class="row4" style="width: 496px; padding-bottom: 0px; padding-top: 0px; border-top-width: 3px; border-bottom-width: 3px; margin-bottom: -1px;">
                 <legend>Terms and Mailing
                 </legend>
                 <p class="agreement">
