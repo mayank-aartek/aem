@@ -136,10 +136,10 @@ $(document).ready(function(){
 	    cell2.innerHTML="<select><option>select</option></select>";
 	    cell3.innerHTML="<select><option>select</option></select>";
 	    cell4.innerHTML="<input type='text'/>"
-	 cell5.innerHTML = "<input type='text' style='width:30px'  class='workinghour' onKeyup='workhour(this.value)'/><input id='"+btnID+"'  type='button' onClick='taskdescription(this.id)' value='add'/> ";
+	 cell5.innerHTML = "<input id='"+btnID+"'  type='button' onClick='taskdescription(this.id)' value='ADD'/> ";
 	 
 	btnID++;
-	 alert("btnid "+btnID);
+	// alert("btnid "+btnID);
 	i++; 
 	});}); 
 
@@ -153,7 +153,7 @@ function taskdescription(btn){
 	  
 	  //alert("hello");
 	   index=btn;
-		alert("index "+index);
+	//	alert("index "+index);
 		$('#popup_box').fadeIn("slow");
 		$("#container").css({ // this is just for style
 			"opacity": "0.3"
@@ -187,7 +187,7 @@ function workhour(hours){
 		//var strDesc=new String();
 		
 		
-		alert(btnID);
+	//	alert(btnID);
 		
 		$('.workinghour').keyup( function() {	// append taskHour 
 			var workHour=$(this).val();
@@ -211,7 +211,7 @@ function workhour(hours){
 		
 		$('.popupBtn').click(function() {	// To Load the Popupbox
 		 index=$(this).attr('id');
-		alert("index "+index);
+		//alert("index "+index);
 			$('#popup_box').fadeIn("slow");
 			$("#container").css({ // this is just for style
 				"opacity": "0.3"
@@ -230,12 +230,12 @@ function workhour(hours){
 		//$('#taskDesc').val('');
 		
 		descArray[index]=$('#taskDesc').val().concat("_"+$('#taskhour').val());
-		alert(descArray[index]);
+		//alert(descArray[index]);
 		
 		//strDesc=strDesc.concat(task+"_");
 		$('#taskDesc1').val(descArray);
 		
-		alert("taskdesc "+$('#taskDesc1').val());
+	//	alert("taskdesc "+$('#taskDesc1').val());
 			$('#popup_box').fadeOut("slow");
 			$("#container").css({ // this is just for style		
 				"opacity": "1" });
@@ -689,8 +689,7 @@ a {
 						<td><select><option>select
 								<option></select></td>
 						<td><input type="text" /></td>
-						<td><input type="text" style="width: 35px" name="hour"
-							class="workinghour" />
+						<td>
 							<button class="popupBtn" type="button" id="0" name="task">ADD</button></td>
 
 
@@ -721,10 +720,10 @@ a {
 
 			<div id="popup_box">
 				<!-- OUR PopupBox DIV-->
-					<input type="text" id="taskhour" name="taskhour" /><sbr>
+					<input type="text" id="taskhour" name="taskhour" required placeholder="write Hours"/><sbr>
 				<textarea id="taskDesc" name="taskpop"
 					placeholder="write Discription"
-					style="width: 100%; height: 50%; margin-top: 10px;"> </textarea>
+					style="width: 100%; height: 50%; margin-top: 10px;" required> </textarea>
 				<a id="popupBoxClose">Close</a>
 				<button id="submitDesc" type="button">Submit</button>
 
