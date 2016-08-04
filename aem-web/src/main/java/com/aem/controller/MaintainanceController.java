@@ -34,16 +34,14 @@ public class MaintainanceController {
 		String[] descriptionList = description[0].split(",");
 		System.out.println(descriptionList[0]);
 		for (String descriptionList1 : descriptionList) {
-		
-				String[] descriptionList2 = descriptionList1.split("_");
-				// System.out.println(descriptionList2[0] + " " +
-				// descriptionList2[1]);
-				TaskDescription taskDescription = new TaskDescription();
-				taskDescription.setHours(Integer.parseInt(descriptionList2[1]));
-				taskDescription.setDescription(descriptionList2[0]);
-				taskList.add(taskDescription);
-			}
-	
+
+			String[] descriptionList2 = descriptionList1.split("_");
+			TaskDescription taskDescription = new TaskDescription();
+			taskDescription.setHours(Integer.parseInt(descriptionList2[1]));
+			taskDescription.setDescription(descriptionList2[0]);
+			taskList.add(taskDescription);
+		}
+
 		task.setTaskdescription(taskList);
 		task.setTaskDate(date);
 
