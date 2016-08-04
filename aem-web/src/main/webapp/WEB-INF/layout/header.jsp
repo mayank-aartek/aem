@@ -41,6 +41,7 @@ float: right;
     background-color: wheat;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #e3e3e3;
 }
 
 .dropdown-content a {
@@ -50,7 +51,7 @@ float: right;
     display: block;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {background-color: wheat;}
 
 .dropdown:hover .dropdown-content {
     display: block;
@@ -73,7 +74,7 @@ float: right;
   <!-- <img src="resources/images/images.png" width="30" height="30"> -->
   
   <div class="dropdown-content">
-    <a href="#">User Profile</a>
+    <a href="showProfile">User Profile</a>
     <a href="#">Logout</a>
     <!-- <a href="#">Link 3</a> -->
   </div>
