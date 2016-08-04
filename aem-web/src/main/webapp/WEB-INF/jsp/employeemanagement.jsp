@@ -117,30 +117,28 @@ var strhour=new String();
 var strDesc=new String();
 var descArray=new Array();
 var btnID=1;
+var colDayIncrement=4;
+var colInsert=5;
 $(document).ready(function(){
 	var i=0;
 	//var btnID=1;
 	$("#addnew").click(function(){
 	// alert(1);
 
-	 var table = document.getElementById("myTable");
-	    var row = table.insertRow(4);
-	 row.id=i;
-	 
-	    var cell1 = row.insertCell(0);
-	    var cell2 = row.insertCell(1);
-	 var cell3 = row.insertCell(2);
-	  var cell4 = row.insertCell(3);
-	   var cell5 = row.insertCell(4);
-	//btnID=btnID+1;
-	    cell2.innerHTML="<select><option>select</option></select>";
-	    cell3.innerHTML="<select><option>select</option></select>";
-	    cell4.innerHTML="<input type='text'/>"
-	 cell5.innerHTML = "<input type='text' style='width:30px'  class='workinghour' onKeyup='workhour(this.value)'/><input id='"+btnID+"'  type='button' onClick='taskdescription(this.id)' value='add'/> ";
+	
+    var row = document.getElementById("myTable").rows[3];
+    var x = row.insertCell(colInsert);
+    //x.innerHTML = "New cell";
+	
+	$('#daySpan').attr('colspan',colDayIncrement);
+	$('#dateSpan').attr('colspan',colDayIncrement);
+	    
+	x.innerHTML = "<input id='"+btnID+"'  type='button' onClick='taskdescription(this.id)' value='ADD DESCRIPTION'/> ";
 	 
 	btnID++;
-	 alert("btnid "+btnID);
-	i++; 
+
+	colDayIncrement++; 
+	colInsert++
 	});}); 
 
 
@@ -153,7 +151,7 @@ function taskdescription(btn){
 	  
 	  //alert("hello");
 	   index=btn;
-		alert("index "+index);
+		//alert("index "+index);
 		$('#popup_box').fadeIn("slow");
 		$("#container").css({ // this is just for style
 			"opacity": "0.3"
@@ -187,7 +185,7 @@ function workhour(hours){
 		//var strDesc=new String();
 		
 		
-		alert(btnID);
+		//alert(btnID);
 		
 		$('.workinghour').keyup( function() {	// append taskHour 
 			var workHour=$(this).val();
@@ -211,7 +209,7 @@ function workhour(hours){
 		
 		$('.popupBtn').click(function() {	// To Load the Popupbox
 		 index=$(this).attr('id');
-		alert("index "+index);
+		//alert("index "+index);
 			$('#popup_box').fadeIn("slow");
 			$("#container").css({ // this is just for style
 				"opacity": "0.3"
@@ -230,12 +228,12 @@ function workhour(hours){
 		//$('#taskDesc').val('');
 		
 		descArray[index]=$('#taskDesc').val().concat("_"+$('#taskhour').val());
-		alert(descArray[index]);
+	//	alert(descArray[index]);
 		
 		//strDesc=strDesc.concat(task+"_");
 		$('#taskDesc1').val(descArray);
 		
-		alert("taskdesc "+$('#taskDesc1').val());
+	//	alert("taskdesc "+$('#taskDesc1').val());
 			$('#popup_box').fadeOut("slow");
 			$("#container").css({ // this is just for style		
 				"opacity": "1" });
@@ -381,8 +379,8 @@ input:checked+label {
 
 #tab {
 	height: 471px;
-	overflow-x: hidden;
-	overflow-y: scroll;
+	overflow-x: scroll;
+	overflow-y: hidden;
 }
 
 .responstable {
@@ -520,8 +518,8 @@ th {
 	height: 200px;
 	width: 300px;
 	background: #FFFFFF;
-	left: 300px;
-	top: 150px;
+	left: 40%;
+	top: 30%;
 	z-index: 100;
 	/* Layering ( on-top of others), if you have lots of layers: I just maximized, you can change it yourself */
 	margin-left: 15px;
@@ -669,12 +667,12 @@ a {
 							<th rowspan="2">Project</th>
 							<th rowspan="2">Activity</th>
 							<th rowspan="2">Module/Ticket No.</th>
-							<th colspan="3" name="day" value="monday"
-								style="font-size: 15px;">MONDay</th>
+							<th id="daySpan" colspan="3" name="day" value="monday"
+								style="font-size: 15px; width:100%">MONDAY</th>
 						</tr>
 
 						<tr style="font-size: 10px;">
-							<th><input type="text" name="date"></th>
+							<th id="dateSpan" ><input type="text" name="date"></th>
 							<!-- <th>Total Hours</th>
 							<th>Total Weekly Hours</th>
  -->
@@ -689,14 +687,8 @@ a {
 						<td><select><option>select
 								<option></select></td>
 						<td><input type="text" /></td>
-						<td><input type="text" style="width: 35px" name="hour"
-							class="workinghour" />
-							<button class="popupBtn" type="button" id="0" name="task">ADD</button></td>
-
-
-
-
-
+						<td>
+							<input class="popupBtn" type="button" id="0" name="task" value="ADD DESCRIPTION"/></td>
 					</tr>
 
 					<tr style="background: rgb(234, 243, 243)">
@@ -721,10 +713,10 @@ a {
 
 			<div id="popup_box">
 				<!-- OUR PopupBox DIV-->
-					<input type="text" id="taskhour" name="taskhour" /><sbr>
+					<input type="text" id="taskhour" name="taskhour" required/><sbr>
 				<textarea id="taskDesc" name="taskpop"
 					placeholder="write Discription"
-					style="width: 100%; height: 50%; margin-top: 10px;"> </textarea>
+					style="width: 100%; height: 50%; margin-top: 10px;" required> </textarea>
 				<a id="popupBoxClose">Close</a>
 				<button id="submitDesc" type="button">Submit</button>
 

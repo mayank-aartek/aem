@@ -23,35 +23,28 @@ public class MaintainanceController {
 	@RequestMapping(value = "/savetask", method = RequestMethod.POST)
 	public String saveTask(ModelMap model, HttpServletRequest request) {
 		System.out.println("inside task controller");
-		String hours = request.getParameter("hours");
-		String description = request.getParameter("taskDesc");
+
+		String description[] = request.getParameterValues("taskDesc[]");
 		String date = request.getParameter("date");
-		
-		String[] hoursList = hours.split(" ");
-		String[] descriptionList = description.split("_");
-System.out.println(descriptionList[0]+" "+descriptionList[1]);
-		
+
 		List<TaskDescription> taskList = new ArrayList<TaskDescription>();
 
-		//System.out.println(hours + " " + description + " " + date);
 		TaskManagement task = new TaskManagement();
-		
-		for (int hour = 0; hour < hoursList.length; hour++) {
-			TaskDescription taskDescription = new TaskDescription();
-			taskDescription.setHours(Integer.parseInt(hoursList[hour]));
-			taskDescription.setDescription(descriptionList[hour]);
-			System.out.println(taskDescription.getHours()+" "+taskDescription.getDescription() );
-			taskList.add(taskDescription);
-			
 
+		String[] descriptionList = description[0].split(",");
+		System.out.println(descriptionList[0]);
+		for (String descriptionList1 : descriptionList) {
+
+			String[] descriptionList2 = descriptionList1.split("_");
+			TaskDescription taskDescription = new TaskDescription();
+			taskDescription.setHours(Integer.parseInt(descriptionList2[1]));
+			taskDescription.setDescription(descriptionList2[0]);
+			taskList.add(taskDescription);
 		}
-		for(TaskDescription ts:taskList)
-		{
-			System.out.println(ts.getDescription()+" "+ts.getHours());
-		}
-		//System.out.println(taskList);
+
 		task.setTaskdescription(taskList);
 		task.setTaskDate(date);
+
 		boolean taskStatus = maintainanceservice.saveTaskDescription(task);
 
 		if (taskStatus) {
