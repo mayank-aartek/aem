@@ -9,7 +9,7 @@
 
 .headerBox
 {
-background-color:#ff9900;
+background-color:#05787F;
 max-width:80%;
 height: 97px;
 position: absolute;
@@ -38,7 +38,7 @@ float: right;
     display: none;
     position: absolute;
     right: 0;
-    background-color: #ff9900;
+    background-color: wheat;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
@@ -67,7 +67,8 @@ float: right;
 <label style="position:relative;top:20%;color:white;text-decoration:none;">Aartek Employee Management</label>
 </div>
 <div class="dropdown" style="float:right; ">
- <img src="resources/images/user logo.png"  width="60" height="50" style="margin-right: 3px;  border-radius: 100%;><label id="name">Software Devloper</label>
+ <img src="resources/images/user logo.png"  width="60" height="50" style="margin-right: 3px;  border-radius: 100%;">
+
   <!-- <button class="dropbtn"><img src="resources/images/images.png" width="20" height="20"></button> -->
   <!-- <img src="resources/images/images.png" width="30" height="30"> -->
   

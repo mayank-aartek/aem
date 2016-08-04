@@ -28,7 +28,7 @@ text-align: center;
 
 .mainmenu a {
   display: block;
-  background-color: #ff6666;
+  background-color: wheat;
   text-decoration: none;
   padding: 10px;
   color:black;
@@ -37,11 +37,11 @@ text-align: center;
 }
 
 .mainmenu a:hover {
-    background-color:#ff6666; /*  #cc7a00 */
+    background-color:#05787F; /*  #cc7a00 */
 }
 
 .mainmenu.submenu{
-background-color:#ff6666;
+background-color:#05787F;
 
 }
 
@@ -57,12 +57,12 @@ background-color:#ff6666;
 */
 
 .submenu a {
-  background-color:#ff6666;    
+  background-color:#05787F;    
 }
 
 /* hover behaviour for links inside .submenu */
 .submenu a:hover {
-  background-color:#ff6666;
+  background-color:#05787F;
 }
 
 /* this is the initial state of all submenus.
@@ -83,7 +83,7 @@ position:absolute;
 top:0;
 left:0;
 height: 100%;
-background-color: #ff6666;
+background-color: #19293B;
 
 }
 
@@ -93,12 +93,10 @@ text-aline:center;
 }
 #name
 {
-margin-left:0%;
-position:absolute;
-top:20%;
-left:50%;
 color:white;
 font-size:120%;
+text-align: center;
+margin-left: 15%;
 }
 
 }
@@ -115,7 +113,7 @@ height:100%;
 }
 
 #logo{
-background-color:#ff9900;
+background-color:wheat;
 width:100%;
 height:97px;
 }
@@ -127,7 +125,8 @@ height:97px;
 <div id="logo"><img style="height: 100%; width: 100%;" src="resources/images/logo.png"></div>
 
 
-<div class="photoBox"><img id="photo" src="resources/images/user logo.png" style="width:45%; height:27%"><label id="name">Software Devloper</label></div>
+<div class="photoBox"><img id="photo" src="resources/images/user logo.png" style="max-width:100%; max-height:100%; border-radius:50%"><br>
+<label id="name">Software Devloper</label></div>
 
 <ul class="mainmenu">
     <li><a href="">Home</a></li>

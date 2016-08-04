@@ -9,20 +9,20 @@
 <style type="text/css">
 #footer
 {
-background-color: #ccc;
+background-color: #05787F;
 color:white;
-position: fixed;
+position:fixed;
 top:95%;
 left:20%;
 width:80%;
-height: 5%;
+height: 8%;
 text-align: right;
 margin-top:0px;
 }
 </style>
 <body>
 <footer id="footer">
-<a href="http://aartek.co.in/"style="padding-top:.2%;">&copyAartek software solutions 2016</a>
+<a href="http://aartek.co.in/"style="padding-top:.5%;padding-bottom:.5%;color:white;">&copyAartek software solutions 2016</a>
 </footer>
 </body>
 </html>
