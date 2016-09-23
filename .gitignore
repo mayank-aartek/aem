@@ -1,0 +1,10 @@
+*.zip
+.metadata/
+.project
+.settings/
+aem-admin/.gitignore
+aem-admin/.classpath
+*.classpath
+aem-data/.gitignore
+aem-service/.gitignore
+aem-web/.gitignore
